@@ -3,10 +3,12 @@
 # Homework 1 (15 pts)
 
 ## Create website from SpaceX public API
+
 - Document: https://docs.spacexdata.com/
 - API URL: https://api.spacexdata.com/v3
 
 ## Sitemap
+
 - Home
 - Rockets
   - Rocket detail
@@ -14,6 +16,7 @@
   - Launch detail
 
 ## Requirements (10 pts)
+
 - Create project from create-react-app
 - Every page: Menu links to Home page, Rockets page and Launches page
 - Every page: Active menu
@@ -25,11 +28,13 @@
 - Launch detail page: Display launch detail, link to rocket detail
 
 ## Advance requirements (5 pts)
+
 - Responsive design (desktop and mobile)
 - PWA: Save to APP and offline page
 - Launches page: Display launches with pagination or infinite scroll
 
 ## Special scores (5 pts)
+
 - Design: Top 3 design, votes from everyone
 - Bundle size: Top 3 smallest bundle size
 - Performance: Top 3 lighthouse score

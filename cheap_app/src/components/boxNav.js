@@ -1,11 +1,12 @@
 import React from 'react'
 import "../styles/stylesComponents.css"
+import {Link} from 'react-router-dom'
 
-const BoxNav = ({text, clickHandle}) => {
+const BoxNav = ({text, path}) => {
     return (
-        <div className="boxNav">
+        <Link className="boxNav" to={path} >
             <p>{text}</p>
-        </div>
+        </Link>
     )
 }
 

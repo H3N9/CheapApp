@@ -1,9 +1,9 @@
-import Home from './pages/home'
+import Index from './pages/index'
 
 
 function App() {
     return (
-        <Home />
+        <Index />
     )
 }
 

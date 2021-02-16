@@ -5,9 +5,9 @@ import '../styles/stylesComponents.css'
 const NavBar = () => {
     return (
         <div className="navBar">
-            <BoxNav text={"Launch"} />
-            <BoxNav text={"Rockets"} />
-            <BoxNav text={"Home"} />
+            <BoxNav text={"Launch"} path="/launch" />
+            <BoxNav text={"Rockets"} path="/rockets" />
+            <BoxNav text={"Home"} path="/" />
         </div>
     )
 }

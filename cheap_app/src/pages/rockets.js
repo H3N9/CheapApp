@@ -1,10 +1,8 @@
 import React from 'react'
-import {Route} from 'react-router-dom'
-import NavBar from '../components/navBar'
 
 const Rockets = () => {
     return (
-        <NavBar />
+        <h1>Rockets</h1>
     )
 }
 

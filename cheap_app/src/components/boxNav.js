@@ -1,10 +1,10 @@
 import React from 'react'
+import "../styles/stylesComponents.css"
 
-
-const BoxNav = () => {
+const BoxNav = ({text, clickHandle}) => {
     return (
-        <div>
-            
+        <div className="boxNav">
+            <p>{text}</p>
         </div>
     )
 }

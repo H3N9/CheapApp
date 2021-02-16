@@ -1,9 +1,10 @@
 import React from 'react'
-import {Route} from 'react-router-dom'
+import {BrowserRouter as Router, Switch, Link, Route} from 'react-router-dom'
+import NavBar from '../components/navBar'
 
 const Home = () => {
     return (
-        <></>
+        <NavBar />
     )
 }
 

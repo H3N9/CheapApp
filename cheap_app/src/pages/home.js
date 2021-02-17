@@ -3,6 +3,7 @@ import '../styles/stylesPages.css'
 import homeImage from '../images/home/home.jpg'
 import {fetchData} from '../tools/fetch'
 import CardHis from '../components/cardHis'
+import Logo from '../images/home/spacexLogo.png'
 
 
 const Home = () => {
@@ -20,12 +21,11 @@ const Home = () => {
         <React.Fragment>
             {/*Image with text on home page*/}
            <div className="boxImage">
-               <h1 id="name-i-image">
-                    {jsonInfo.name}
-               </h1>
-               <p id="detail-i-image">
-                   {jsonInfo.summary}
-               </p>
+                    <img id="name-i-image" src={Logo} alt="SpaceX_logo"/>
+                <p id="detail-i-image">
+                    {jsonInfo.summary}
+                </p>
+               
            </div>
 
            {/*content history*/}

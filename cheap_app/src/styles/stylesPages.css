@@ -2,15 +2,12 @@
     height: 100%;
     width: 100%;
 }
-.bigPic{
-    width: 100%;
-    height: 80vh;
-    
-}
 .boxImage{
     width: 100%;
     height: 80vh;
     position: relative;
+    background-image: url('../images/home/home.jpg');
+    background-size: cover;
 }
 #name-i-image{
     position: absolute;
@@ -39,27 +36,48 @@
 }
 
 /*Histories*/
+#boxHistories{
+    background-image: url("../images/home/back.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+}
 #spaceBetween{
     height: 30vh;
     width: 100%;
     overflow: hidden;
     position: relative;
-    
 }
-
 #traingle{
     position: absolute;
 	border-left: 100vw solid black;
 	border-bottom: 30vh solid transparent;
 }
-#name-i-b{
+.name-i-b{
     position: absolute;
     color: white;
     margin: 0;
-    top: 50%;
-    left: 5%;
     transform: translateY(-50%);
     font-size: 5vh;
 }
+.leftStyle{
+    left: 10%;
+    top: 20%;
+}
+.rightStyle{
+    top: 80%;
+    right: 10%;
+}
 
-/*card*/
+/*Card*/
+#displayCard{
+    padding: 1% 0 1% 0;
+}
+
+
+/*Endlines*/
+#endLing{
+    background-color: black;
+    width: 100%;
+    height: 10vh;
+}

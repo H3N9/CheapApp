@@ -7,18 +7,19 @@ import CardHis from '../components/cardHis'
 
 const Home = () => {
     const [jsonInfo, setJsonInfo] = useState({})
-    const [jsonHis, setJsonHis] = useState({})
+    const [jsonHis, setJsonHis] = useState([])
     const urlInfo = "https://api.spacexdata.com/v3/info"
+    const urlHis = "https://api.spacexdata.com/v3/history"
 
     useEffect(() => {
         fetchData(urlInfo, setJsonInfo)
+        fetchData(urlHis, setJsonHis)
     }, [])
     
     return (
         <React.Fragment>
             {/*Image with text on home page*/}
            <div className="boxImage">
-               <img className="bigPic" src={homeImage} alt="blank"/>
                <h1 id="name-i-image">
                     {jsonInfo.name}
                </h1>
@@ -29,19 +30,31 @@ const Home = () => {
 
            {/*content history*/}
 
-            <div id="spaceBetween">
+           {/* <div id="spaceBetween">
                 <div id="traingle" >
                 </div>
-                <h1 id="name-i-b">Histories</h1>
-                
-            </div>
+                <h1 className="name-i-b leftStyle">Histories</h1>
+                <h1 className="name-i-b rightStyle">Details</h1>
+            </div>*/}
            
            {/*card*/}
-            <div>
-                <CardHis />
-                <CardHis />
-                <CardHis />
-                <CardHis />
+            <div id="boxHistories">
+
+                <div id="spaceBetween">
+                    <div id="traingle" />
+                    <h1 className="name-i-b leftStyle">Histories</h1>
+                    <h1 className="name-i-b rightStyle">Details</h1>
+                </div>
+
+                <div id="displayCard">
+                    {jsonHis.map((history) => (<CardHis key={history.id} history={history} />))}
+                </div>
+                
+            </div>
+
+            {/* Ending lines*/}
+            <div id="endLing">
+
             </div>
 
             

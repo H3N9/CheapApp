@@ -14,7 +14,7 @@ const Home = () => {
     console.log(jsonInfo)
     return (
            <div className="boxImage">
-               <img className="bigPic" src={homeImage} />
+               <img className="bigPic" src={homeImage}/>
                <h1 id="name-i-image">
                     {jsonInfo.name}
                </h1>

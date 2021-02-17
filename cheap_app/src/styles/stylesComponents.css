@@ -26,3 +26,24 @@
     top: 0;
     z-index: 2;
 }
+
+/*Card*/
+.card{
+    width: 100%;
+    height: 10vh;
+    margin-bottom: 1vh;
+    position: relative;
+    display: flex;
+}
+.boxCardImg{
+    width: 30%;
+    height: 100%;
+    position: relative;
+    background-color: red;
+}
+.textCard{
+    width: 70%;
+    height: 100%;
+    position: relative;
+    background-color: blue;
+}

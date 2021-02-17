@@ -1,13 +1,15 @@
 import React from 'react'
 
 const RocketBox = ({ rocket }) =>{
-    const { flickr_images, rocket_name } = rocket
+    const { flickr_images, rocket_name, description } = rocket
     console.log(flickr_images[0])
 
     return(
-        <div>
-            <img src={flickr_images[0]} width={200} height={200}/>
-            <h1>{rocket_name}</h1>
+        <div class="box">
+                <div class="content" style={{ backgroundImage: `url(${flickr_images})` }}>
+                    <h3>{rocket_name}</h3>
+                    <p>{description}</p>
+                </div>
         </div>
     )
 }

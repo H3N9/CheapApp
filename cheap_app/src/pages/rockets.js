@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { fetchData } from '../tools/fetch'
 import RocketBox from '../components/rocket/rocketBox'
+import '../styles/stylesRocketPage.css'
 
 const Rockets = () => {
     const [rockets, setRockets] = useState([])
@@ -12,17 +13,17 @@ const Rockets = () => {
         })
     }, [])
 
-    return (
-        <div className="boxImage">
-            <h1>Rockets</h1>
-            {rockets.map((item) =>{
+    return(
+    <>
+        <div class="container">
+            {rockets.map((rocket) =>{
                 return(
-                    <RocketBox rocket={item}/>
+                    <RocketBox rocket={rocket}/>
                 )
             })}
         </div>
+    </>
     )
 }
-
 
 export default Rockets

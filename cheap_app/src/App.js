@@ -1,9 +1,9 @@
-import Index from './pages/index'
+import RoutePath from './pages/routePath'
 
 
 function App() {
     return (
-        <Index />
+        <RoutePath />
     )
 }
 

@@ -6,7 +6,7 @@ import Rockets from './rockets'
 import Home from './home'
 import '../styles/stylesPages.css'
 
-const Index = () => {
+const RoutePath = () => {
     return (
         <Router>
             <NavBar />
@@ -29,4 +29,4 @@ const Index = () => {
 
 
 
-export default Index
+export default RoutePath

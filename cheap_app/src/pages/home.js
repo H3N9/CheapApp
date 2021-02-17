@@ -1,9 +1,16 @@
 import React from 'react'
+import '../styles/stylesPages.css'
+import homeImage from '../images/home/home.jpg'
 
 
 const Home = () => {
     return (
-       <h1>Home</h1>
+           <div className="boxImage">
+               <img className="bigPic" src={homeImage} />
+               <h1 id="imageText">
+                    SpaceX
+               </h1>
+           </div>
       )
 }
 

@@ -15,7 +15,7 @@ html{
     width: 100%;
     position: relative;
 }
-#imageText{
+#name-i-image{
     position: absolute;
     margin: 0;
     top: 20vh;
@@ -23,4 +23,20 @@ html{
     color: white;
     font-size: 8vh;
     text-shadow: 0.3vh 0.3vh #000;
+}
+#detail-i-image{
+    position: absolute;
+    margin: 0;
+    top: 35vh;
+    left: 15%;
+    width: 50%;
+    color: white;
+    background-color: rgba(80, 80, 80, 0.5);
+    transition: 0.4s;
+    border-radius: 1vh;
+    padding: 2vh;
+    font-size: 2vh;
+}
+#detail-i-image:hover{
+    background-color: rgba(80, 80, 80, 0.8);
 }

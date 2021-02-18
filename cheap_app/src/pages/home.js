@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react'
 import '../styles/stylesHome.css'
 import { fetchData } from '../tools/fetch'
 import CardHis from '../components/home/cardHis'
-import Logo from '../images/home/spacexLogo.png'
+import Logo from '../images/home/logo.png'
 
 const Home = ({ stylePacks }) => {
     const [jsonInfo, setJsonInfo] = useState({})
     const [jsonHis, setJsonHis] = useState([])
+    const [viewScroll, setViewScroll] = useState(true)
     const urlInfo = 'https://api.spacexdata.com/v3/info'
     const urlHis = 'https://api.spacexdata.com/v3/history'
 
@@ -15,6 +16,18 @@ const Home = ({ stylePacks }) => {
         fetchData(urlHis, setJsonHis)
     }, [])
 
+    const scrollHandle = (event) => {
+        const element = event.target
+        const scrollCurrent = element.scrollTop
+        if(scrollCurrent > 0){
+            setViewScroll(false)
+        }
+        else if(scrollCurrent === 0){
+            setViewScroll(true)
+        }
+        
+    }
+    
     return (
         <React.Fragment>
             {/*Image with text on home page*/}
@@ -38,10 +51,11 @@ const Home = ({ stylePacks }) => {
             <div id="boxCard">
                 <div id="boxCard-C-G">
                     <div id="gradientColor-U" />
-                    <div id="boxCardContent">
-                        {jsonHis.map((history) => (
-                            <CardHis key={history.id} history={history} />
+                    <div id="boxCardContent" onScroll={scrollHandle}>
+                        {jsonHis.map((history, index) => (
+                            <CardHis key={history.id} id={index} length={jsonHis.length} history={history} />
                         ))}
+                        {viewScroll && (<div />)}
                     </div>
                     <div id="gradientColor-D" />
                 </div>
@@ -51,5 +65,6 @@ const Home = ({ stylePacks }) => {
         </React.Fragment>
     )
 }
+
 
 export default Home

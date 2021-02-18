@@ -44,6 +44,8 @@
 
 #titleDetail{
     margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
 }
 
 #titleDetail > h1{

@@ -1,5 +1,5 @@
 import React from 'react'
-import "../styles/stylesComponents.css"
+import "../styles/stylesComponentHome.css"
 import {Link} from 'react-router-dom'
 
 const BoxNav = ({text, path}) => {

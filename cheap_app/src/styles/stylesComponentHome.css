@@ -33,6 +33,7 @@
 }
 #logo{
     width: 10vw;
+    display: flex;
 }
 #logo > img {
     width: 100%;

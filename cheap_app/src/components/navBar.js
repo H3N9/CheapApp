@@ -1,6 +1,6 @@
 import React from 'react'
 import BoxNav from './boxNav'
-import '../styles/stylesComponents.css'
+import '../styles/stylesComponentHome.css'
 import Logo from '../images/home/spaceLogo.png'
 
 const NavBar = ({addColor}) => {
@@ -9,7 +9,9 @@ const NavBar = ({addColor}) => {
             <BoxNav text={"Launch"} path="/launch" />
             <BoxNav text={"Rockets"} path="/rockets" />
             <BoxNav text={"Home"} path="/" />
-            <img  src={Logo} alt="Logo_SpaceX" />
+            <div id="logo">
+                <img  src={Logo} alt="Logo_SpaceX" />
+            </div>
             
         </div>
     )

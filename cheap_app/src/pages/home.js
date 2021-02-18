@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import '../styles/stylesPages.css'
+import '../styles/stylesHome.css'
 import homeImage from '../images/home/home.jpg'
 import {fetchData} from '../tools/fetch'
 import CardHis from '../components/home/cardHis'
@@ -28,32 +28,6 @@ const Home = ({stylePacks}) => {
                
            </div>
 
-           {/*content history*/}
-
-           {/* <div id="spaceBetween">
-                <div id="traingle" >
-                </div>
-                <h1 className="name-i-b leftStyle">Histories</h1>
-                <h1 className="name-i-b rightStyle">Details</h1>
-            </div>*/}
-           
-           {/*card*/}
-            {/*<div id="boxHistories">
-
-                <div id="spaceBetween">
-                    <div id="traingle" />
-                    <h1 className={stylePacks.histories} >Histories</h1>
-                    <h1 className={stylePacks.detail} >Details</h1>
-                </div>
-
-                <div id="displayCard">
-                    {jsonHis.map((history) => (<CardHis key={history.id} history={history} />))}
-                </div>
-                
-            </div>
-
-             Ending lines*/}
-
             <div id="boxHistories" >
                 <div id="box-h-text">
                     <h1>HISTORIES</h1>
@@ -73,6 +47,10 @@ const Home = ({stylePacks}) => {
                     <div id="gradientColor-D" />
                 </div>
                 
+            </div>
+
+            <div id="endingLine">
+
             </div>
             
 

@@ -8,14 +8,13 @@
     background-image: url('../images/home/home.jpg');
     background-size: cover;
     display: flex;
-    overflow: hidden;
     justify-content: center;
     flex-direction: column;
     background-attachment: fixed;
     height: 100vh;
 }
 #name-i-image{
-    width: 50%;
+    width: 40vw;
     margin-left: 5vw;
     margin-bottom: 1vh;
 }
@@ -92,7 +91,7 @@
 #boxCardContent{
     overflow-y: scroll;
     width: 100%;
-    padding: 1vw;
+    padding: 5vh 1vh 5vh 1vh;
     display: flex;
     flex-direction: column;
 }
@@ -115,62 +114,8 @@
     background: linear-gradient(0deg, rgba(0,0,0,1) 15%, rgba(0,0,0,0) 100%);
 }
 
-
-
-
-
-
-/*#boxHistories{
-    background-image: url("../images/home/back.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 100%;
-}
-#spaceBetween{
-    height: 30vh;
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-}
-#traingle{
-    position: absolute;
-	border-left: 100vw solid black;
-	border-bottom: 30vh solid transparent;
-}
-.name-i-b{
-    position: absolute;
-    margin: 0;
-    transform: translate(0%, -50%);
-    font-size: 0vh;
-    opacity: 0;
-    transition: 1s;
-}
-.leftStyle{
-    transform: translate(0%, -50%);
-    left: 10%;
-    color: white;
-    top: 30%;
-    opacity: 1;
-    font-size: 5vh;
-}
-.rightStyle{
-    transform: translate(0%, -50%);
-    top: 80%;
-    right: 10%;
-    color: black;
-    opacity: 1;
-    font-size: 5vh;
-}*/
-
-/*Card*/
-#displayCard{
-    padding: 1% 0 1% 0;
-}
-
-
-/*Endlines*/
-#endLing{
+#endingLine{
     background-color: black;
     width: 100%;
-    height: 10vh;
+    height: 20vh;
 }

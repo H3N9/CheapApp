@@ -9,7 +9,7 @@
     flex: 1;
 }
 
-.detail > div > h2, .detailList > div > h2{
+.detail > div > h2{
     text-transform: uppercase;
     font-size: 4vh;
     font-family: 'Viga', sans-serif;
@@ -20,26 +20,59 @@
     font-family: 'Hind Siliguri', sans-serif
 }
 
+.detailLeft{
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+}
+
+.detailRight{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
 .detailList{
     display: flex;
     flex-direction: column;
+    margin-top: 0;
 }
 
 .titleDetailList{
     text-align: center;
-    border-bottom: 5px white solid;
+    border-bottom: 7px white solid;
+    margin-bottom: 40px;
+}
+
+.titleDetailList > h3{
+    font-size: 3vh;
+    margin: 0;
 }
 
 .detailListInfo{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex: 1;
 }
 
 .detailListInfo > div{
-    display: flex;
-    flex: 1;
-    flex-direction: column;
+    border-bottom: 0.5px #bbb solid;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+}
+
+.detailListInfo > div > h3{
+    margin: 0;
+}
+
+.detailListInfo > div > p:first-child{
+    float: left;
+    margin: 0;
+}
+
+.detailListInfo > div > p:last-child{
+    float: right;
+    margin: 0;
 }
 
 #titleDetail{
@@ -63,21 +96,11 @@
     display: flex;
     flex-direction: row;
     flex: 1;
+    flex-wrap: wrap;
 }
 
 #aboutDetail > div > p, .detailListInfo > div > p{
     margin: 0;
-}
-
-#aboutDetail > div:first-child{
-    display: flex;
-    flex-direction: column;
-    flex: 2;
-}
-
-#aboutDetail > div:last-child{
-    display: flex;
-    flex: 1;
 }
 
 @media (max-width: 1000px) {
@@ -89,98 +112,3 @@
         width: 100%;
     }
 }
-
-/*
-.wrapper {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    margin-top: 5vh;
-    color: white;
-    flex: 1;
-}
-
-.wrapper:first-child{
-    margin-top: 20vh;
-}
-
-.column {
-    width: 50%;
-    padding: 10px;
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-}
-
-.column:nth-child(odd){
-    flex: 2;
-}
-
-.column:nth-child(odd) > h1{
-    text-transform: uppercase;
-    font-size: 6vh;
-    font-family: 'Viga', sans-serif;
-}
-
-.column:nth-child(odd) > p{
-    font-size: 2.6vh;
-    font-family: 'Hind Siliguri', sans-serif;
-    margin: 0
-}
-
-.column:nth-child(even){
-    flex: 1;
-    font-size: 2vh;
-}
-
-.infoList{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 100%;
-}
-
-.infoList > div{
-    padding-right: 10%;
-}
-
-body {
-    background-color: #f2e9e4;
-    padding-top: 5vh;
-    line-height: 1.75em;
-    color: #22223b;
-    font-family: serif;
-}
-
-img {
-    width: 80%;
-    height: auto;
-}
-
-/*
-.detailContainer{
-  margin-top: 15vh;
-  padding: 0px;
-  margin-left: 20vw;
-}
-
-.wrapper {
-    grid-gap: 10px;
-    display: grid;
-    grid-template-columns: 1fr 1fr
-}
-
-.wrapperItem {
-    color: white;
-}
-
-.wrapperItem:nth-child(even){
-    max-width: 100px
-}
-
-.wrapperItem:nth-child(even) > img{
-    width: 100%
-}
-*/

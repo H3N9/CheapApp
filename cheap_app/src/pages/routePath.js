@@ -37,7 +37,7 @@ const RoutePath = () => {
             <div id="content">
                 <Switch>
                     <Route exact path="/">
-                        <Home stylePacks={stylePacks} />
+                        <Home />
                     </Route>
                     <Route path="/launch">
                         <Launch />

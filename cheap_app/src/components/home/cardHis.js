@@ -1,7 +1,7 @@
 import React from 'react'
 
 const CardHis = ({ history, id, length }) => {
-    const { title, details, links, event_date_utc } = history
+    const { title, details, event_date_utc } = history
     const dateTime = new Date(event_date_utc)
     const lastId = length-1
     const firstId = 0
@@ -22,11 +22,11 @@ const CardHis = ({ history, id, length }) => {
     const date = dateTime.getDate()
     const month = months[dateTime.getMonth()]
     const year = dateTime.getFullYear()
-    const link = links.wikipedia
-        ? links.wikipedia
-        : links.article
-        ? links.article
-        : links.reddit
+    // const link = links.wikipedia
+    //     ? links.wikipedia
+    //     : links.article
+    //     ? links.article
+    //     : links.reddit
 
     return (
         <div className="card">

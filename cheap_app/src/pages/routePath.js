@@ -1,35 +1,41 @@
 import React, { useCallback, useEffect, useState } from 'react'
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import NavBar from '../components/navBar'
 import Launch from './launch'
 import Rockets from './rockets'
 import Home from './home'
 import RocketDetail from './rocketDetail'
 import '../styles/stylesPages.css'
+import '../styles/stylesHome.css'
+
+const screenHeight = window.innerHeight
 
 const RoutePath = () => {
-    const [color, setColor] = useState("navBar")
+    const [stylePacks, setStylePacks] = useState(defaultStlyes)
 
-    const handleScroll = useCallback(() =>{
-        if(window.pageYOffset > 100 && color === "navBar") {
-            setColor(color+" addColor")
+    const handleScroll = useCallback(() => {
+        const stylesChange = { ...stylePacks }
+        const scrollY = (window.pageYOffset / screenHeight) * 100 + 100 //percent pageYOffset percent from screen window
+
+        if (scrollY > 110 && stylePacks.navBar === defaultStlyes.navBar) {
+            stylesChange.navBar = scrollStyles.navBar
+        } else {
+            stylesChange.navBar = defaultStlyes.navBar
         }
-        else{
-            setColor("navBar")
-        }
+
+        setStylePacks(stylesChange)
     }, [])
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll)
         return () => {
-            window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('scroll', handleScroll)
         }
     }, [])
 
-    
     return (
         <Router>
-            <NavBar color={color} />
+            <NavBar addColor={stylePacks.navBar} />
             <div id="content">
                 <Switch>
                 <Route exact path="/">
@@ -47,9 +53,18 @@ const RoutePath = () => {
                 </Switch>
             </div>
         </Router>
-      )
+    )
 }
 
-
+const defaultStlyes = {
+    navBar: 'navBar',
+    histories: 'name-i-b',
+    detail: 'name-i-b',
+}
+const scrollStyles = {
+    navBar: 'navBar addColor',
+    histories: 'name-i-b leftStyle',
+    detail: 'name-i-b rightStyle',
+}
 
 export default RoutePath

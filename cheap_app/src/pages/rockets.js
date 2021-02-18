@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { fetchData } from '../tools/fetch'
 import RocketBox from '../components/rocket/rocketBox'
 import '../styles/stylesRocketPage.css'
-import '../styles/stylesPages.css'
 
 const Rockets = () => {
     const [rockets, setRockets] = useState([])

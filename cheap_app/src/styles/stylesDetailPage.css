@@ -1,5 +1,94 @@
 @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri&display=swap');
 
+.containerDetail{
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-top: 20vh;
+    color: white;
+    flex: 1;
+}
+
+.detail > div > h2, .detailList > div > h2{
+    text-transform: uppercase;
+    font-size: 4vh;
+    font-family: 'Viga', sans-serif;
+}
+
+.detail > div > p{
+    font-size: 2.6vh;
+    font-family: 'Hind Siliguri', sans-serif
+}
+
+.detailList{
+    display: flex;
+    flex-direction: column;
+}
+
+.titleDetailList{
+    text-align: center;
+    border-bottom: 5px white solid;
+}
+
+.detailListInfo{
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+}
+
+.detailListInfo > div{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+#titleDetail{
+    margin-bottom: 100px;
+}
+
+#titleDetail > h1{
+    text-transform: uppercase;
+    font-size: 6vh;
+    font-family: 'Viga', sans-serif;
+}
+
+#titleDetail, .aboutDetail{
+    font-size: 2.6vh;
+    font-family: 'Hind Siliguri', sans-serif;
+}
+
+#aboutDetail{
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+}
+
+#aboutDetail > div > p, .detailListInfo > div > p{
+    margin: 0;
+}
+
+#aboutDetail > div:first-child{
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+}
+
+#aboutDetail > div:last-child{
+    display: flex;
+    flex: 1;
+}
+
+@media (max-width: 1000px) {
+    #titleDetail > h1{
+        text-align: center;
+    }
+
+    .containerDetail{
+        width: 100%;
+    }
+}
+
+/*
 .wrapper {
     display: flex;
     flex-direction: row;
@@ -36,27 +125,25 @@
 .column:nth-child(odd) > p{
     font-size: 2.6vh;
     font-family: 'Hind Siliguri', sans-serif;
+    margin: 0
 }
 
 .column:nth-child(even){
     flex: 1;
     font-size: 2vh;
-    border: white 1px solid;
 }
 
 .infoList{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    width: 100%;
 }
 
 .infoList > div{
-    padding-right: 50%;
+    padding-right: 10%;
 }
 
-/**
-    Doll up pen a little
-*/
 body {
     background-color: #f2e9e4;
     padding-top: 5vh;

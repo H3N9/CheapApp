@@ -5,7 +5,6 @@ import Launch from './launch'
 import Rockets from './rockets'
 import Home from './home'
 import RocketDetail from './rocketDetail'
-import '../styles/stylesPages.css'
 import '../styles/stylesHome.css'
 
 const screenHeight = window.innerHeight

@@ -1,0 +1,69 @@
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 1020px;
+    margin: 0 auto;
+    margin-top: 20vh;
+    color: white;
+    flex: 1;
+}
+
+.column {
+    width: 50%;
+    padding: 0 15px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    border: white 1px solid;
+}
+
+.column:nth-child(odd){
+    flex: 2;
+}
+
+.column:nth-child(even){
+    flex: 1;
+}
+
+/**
+    Doll up pen a little
+*/
+body {
+    background-color: #f2e9e4;
+    padding-top: 5vh;
+    line-height: 1.75em;
+    color: #22223b;
+    font-family: serif;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+/*
+.detailContainer{
+  margin-top: 15vh;
+  padding: 0px;
+  margin-left: 20vw;
+}
+
+.wrapper {
+    grid-gap: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr
+}
+
+.wrapperItem {
+    color: white;
+}
+
+.wrapperItem:nth-child(even){
+    max-width: 100px
+}
+
+.wrapperItem:nth-child(even) > img{
+    width: 100%
+}
+*/

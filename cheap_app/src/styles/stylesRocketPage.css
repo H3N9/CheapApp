@@ -15,7 +15,7 @@
 }
 
 body {
-  background: linear-gradient(to bottom, #003366 0%, #0099cc 100%);
+  background: linear-gradient(to bottom, #000408 0%, #033264 85%, #036281 100%);
   height: 100vh;
   flex-direction: column;
   display: flex;
@@ -33,6 +33,14 @@ body > p{
   border-top:1px solid whitesmoke;
   border-bottom:1px solid whitesmoke;
   text-align: center;
+}
+
+.box {
+  background-color: #999;
+  color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 150%;
 }
 
 .container {

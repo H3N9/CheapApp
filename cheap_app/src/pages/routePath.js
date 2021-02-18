@@ -4,6 +4,7 @@ import NavBar from '../components/navBar'
 import Launch from './launch'
 import Rockets from './rockets'
 import Home from './home'
+import RocketDetail from './rocketDetail'
 import '../styles/stylesPages.css'
 
 const RoutePath = () => {
@@ -39,6 +40,9 @@ const RoutePath = () => {
                 </Route>
                 <Route path="/rockets">
                     <Rockets />
+                </Route>
+                <Route path="/rocketsDetail/:rocketId">
+                    <RocketDetail/>
                 </Route>
                 </Switch>
             </div>

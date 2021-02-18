@@ -1,16 +1,23 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const RocketBox = ({ rocket }) =>{
-    const { flickr_images, rocket_name, description } = rocket
-    console.log(flickr_images[0])
+    const { id, flickr_images, rocket_name, description } = rocket
 
     return(
-        <div class="box">
-                <div class="content" style={{ backgroundImage: `url(${flickr_images})` }}>
-                    <h3>{rocket_name}</h3>
-                    <p>{description}</p>
-                </div>
-        </div>
+            <div className="box">
+                <Link className="boxRocketLink" to={{
+                    pathname: `/rocketsDetail/${id}`,
+                    state: {
+                        rocket: rocket
+                    }
+                }}>
+                    <div className="content" style={{ backgroundImage: `url(${flickr_images[0]})` }}>
+                        <h3>{rocket_name}</h3>
+                        <p>{description}</p>
+                    </div>
+                </Link>
+            </div>
     )
 }
 

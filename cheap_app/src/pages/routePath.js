@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react'
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import NavBar from '../components/navBar'
 import Launch from './launch'
 import Rockets from './rockets'
@@ -8,20 +8,16 @@ import '../styles/stylesHome.css'
 
 const screenHeight = window.innerHeight
 
-
-
-
 const RoutePath = () => {
     const [stylePacks, setStylePacks] = useState(defaultStlyes)
 
-    const handleScroll = useCallback(() =>{
-        const stylesChange = {...stylePacks}
-        const scrollY = window.pageYOffset/screenHeight*100+100 //percent pageYOffset percent from screen window
+    const handleScroll = useCallback(() => {
+        const stylesChange = { ...stylePacks }
+        const scrollY = (window.pageYOffset / screenHeight) * 100 + 100 //percent pageYOffset percent from screen window
 
-        if(scrollY > 110 && stylePacks.navBar === defaultStlyes.navBar) {
+        if (scrollY > 110 && stylePacks.navBar === defaultStlyes.navBar) {
             stylesChange.navBar = scrollStyles.navBar
-        }
-        else{
+        } else {
             stylesChange.navBar = defaultStlyes.navBar
         }
 
@@ -31,7 +27,7 @@ const RoutePath = () => {
     useEffect(() => {
         window.addEventListener('scroll', handleScroll)
         return () => {
-            window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('scroll', handleScroll)
         }
     }, [])
 
@@ -40,33 +36,30 @@ const RoutePath = () => {
             <NavBar addColor={stylePacks.navBar} />
             <div id="content">
                 <Switch>
-                <Route exact path="/">
-                    <Home stylePacks={stylePacks} />
-                </Route>
-                <Route path="/launch">
-                    <Launch />
-                </Route>
-                <Route path="/rockets">
-                    <Rockets />
-                </Route>
+                    <Route exact path="/">
+                        <Home stylePacks={stylePacks} />
+                    </Route>
+                    <Route path="/launch">
+                        <Launch />
+                    </Route>
+                    <Route path="/rockets">
+                        <Rockets />
+                    </Route>
                 </Switch>
             </div>
         </Router>
-      )
+    )
 }
-
 
 const defaultStlyes = {
-    navBar: "navBar",
-    histories: "name-i-b",
-    detail: "name-i-b",
+    navBar: 'navBar',
+    histories: 'name-i-b',
+    detail: 'name-i-b',
 }
 const scrollStyles = {
-    navBar: "navBar addColor",
-    histories: "name-i-b leftStyle",
-    detail: "name-i-b rightStyle",
+    navBar: 'navBar addColor',
+    histories: 'name-i-b leftStyle',
+    detail: 'name-i-b rightStyle',
 }
-
-
 
 export default RoutePath

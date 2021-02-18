@@ -6,23 +6,21 @@ import '../styles/stylesRocketPage.css'
 const Rockets = () => {
     const [rockets, setRockets] = useState([])
 
-    useEffect(() =>{
-        fetchData('https://api.spacexdata.com/v3/rockets', (data) =>{
+    useEffect(() => {
+        fetchData('https://api.spacexdata.com/v3/rockets', (data) => {
             console.log(data)
             setRockets(data)
         })
     }, [])
 
-    return(
-    <>
-        <div class="container">
-            {rockets.map((rocket) =>{
-                return(
-                    <RocketBox rocket={rocket}/>
-                )
-            })}
-        </div>
-    </>
+    return (
+        <>
+            <div class="container">
+                {rockets.map((rocket) => {
+                    return <RocketBox rocket={rocket} />
+                })}
+            </div>
+        </>
     )
 }
 

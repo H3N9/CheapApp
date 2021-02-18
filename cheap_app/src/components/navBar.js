@@ -3,15 +3,13 @@ import BoxNav from './boxNav'
 import '../styles/stylesComponents.css'
 import Logo from '../images/home/spaceLogo.png'
 
-const NavBar = ({color}) => {
+const NavBar = ({addColor}) => {
     return (
-        <div className={color} >
+        <div className={addColor} >
             <BoxNav text={"Launch"} path="/launch" />
             <BoxNav text={"Rockets"} path="/rockets" />
             <BoxNav text={"Home"} path="/" />
-            <div id="logo">
-                <img id="logo" src={Logo} alt="Logo_SpaceX" />
-            </div>
+            <img  src={Logo} alt="Logo_SpaceX" />
             
         </div>
     )

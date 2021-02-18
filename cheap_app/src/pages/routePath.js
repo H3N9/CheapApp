@@ -6,16 +6,26 @@ import Rockets from './rockets'
 import Home from './home'
 import '../styles/stylesPages.css'
 
+const screenHeight = window.innerHeight
+
+
+
+
 const RoutePath = () => {
-    const [color, setColor] = useState("navBar")
+    const [stylePacks, setStylePacks] = useState(defaultStlyes)
 
     const handleScroll = useCallback(() =>{
-        if(window.pageYOffset > 100 && color === "navBar") {
-            setColor(color+" addColor")
+        const stylesChange = {...stylePacks}
+        const scrollY = window.pageYOffset/screenHeight*100+100 //percent pageYOffset percent from screen window
+
+        if(scrollY > 110 && stylePacks.navBar === defaultStlyes.navBar) {
+            stylesChange.navBar = scrollStyles.navBar
         }
         else{
-            setColor("navBar")
+            stylesChange.navBar = defaultStlyes.navBar
         }
+
+        setStylePacks(stylesChange)
     }, [])
 
     useEffect(() => {
@@ -25,14 +35,13 @@ const RoutePath = () => {
         }
     }, [])
 
-    
     return (
         <Router>
-            <NavBar color={color} />
+            <NavBar addColor={stylePacks.navBar} />
             <div id="content">
                 <Switch>
                 <Route exact path="/">
-                    <Home />
+                    <Home stylePacks={stylePacks} />
                 </Route>
                 <Route path="/launch">
                     <Launch />
@@ -44,6 +53,18 @@ const RoutePath = () => {
             </div>
         </Router>
       )
+}
+
+
+const defaultStlyes = {
+    navBar: "navBar",
+    histories: "name-i-b",
+    detail: "name-i-b",
+}
+const scrollStyles = {
+    navBar: "navBar addColor",
+    histories: "name-i-b leftStyle",
+    detail: "name-i-b rightStyle",
 }
 
 

@@ -4,13 +4,15 @@
 }
 .boxImage{
     width: 100%;
-    height: 100vh;
     position: relative;
     background-image: url('../images/home/home.jpg');
     background-size: cover;
     display: flex;
+    overflow: hidden;
     justify-content: center;
     flex-direction: column;
+    background-attachment: fixed;
+    height: 100vh;
 }
 #name-i-image{
     width: 50%;
@@ -34,6 +36,91 @@
 
 /*Histories*/
 #boxHistories{
+    background-image: url('../images//home/bg.jpg');
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+#gradientColor{
+    display: flex;
+    align-self: flex-end;
+    width: 100%;
+    height: 75vh;
+    background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,1) 15%, rgba(0,0,0,0) 100%);
+}
+#box-h-text{
+    width: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+}
+#box-h-text > h1{
+    font-size: 8vw;
+}
+#box-h-text > p{
+    font-size: 2.5vw;
+}
+
+
+
+
+/*Card*/
+#boxCard{
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    
+}
+#boxCard-C-G{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    
+}
+#boxCardContent{
+    overflow-y: scroll;
+    width: 100%;
+    padding: 1vw;
+    display: flex;
+    flex-direction: column;
+}
+
+#gradientColor-U{
+    z-index: 1;
+    height: 5vh;
+    position: absolute;
+    width: 100%;
+    background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(0,0,0,1) 15%, rgba(0,0,0,0) 100%);
+}
+#gradientColor-D{
+    z-index: 1;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    height: 5vh;
+    background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,1) 15%, rgba(0,0,0,0) 100%);
+}
+
+
+
+
+
+
+/*#boxHistories{
     background-image: url("../images/home/back.jpg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -52,20 +139,28 @@
 }
 .name-i-b{
     position: absolute;
-    color: white;
     margin: 0;
-    transform: translateY(-50%);
-    font-size: 5vh;
+    transform: translate(0%, -50%);
+    font-size: 0vh;
+    opacity: 0;
+    transition: 1s;
 }
 .leftStyle{
+    transform: translate(0%, -50%);
     left: 10%;
-    top: 20%;
+    color: white;
+    top: 30%;
+    opacity: 1;
+    font-size: 5vh;
 }
 .rightStyle{
+    transform: translate(0%, -50%);
     top: 80%;
     right: 10%;
     color: black;
-}
+    opacity: 1;
+    font-size: 5vh;
+}*/
 
 /*Card*/
 #displayCard{

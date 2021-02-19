@@ -4,10 +4,10 @@ import { fetchData } from '../tools/fetch'
 import CardHis from '../components/home/cardHis'
 import Logo from '../images/home/logo.png'
 
-const Home = ({ stylePacks }) => {
+const Home = () => {
     const [jsonInfo, setJsonInfo] = useState({})
     const [jsonHis, setJsonHis] = useState([])
-    const [viewScroll, setViewScroll] = useState(true)
+    const [viewScroll, setViewScroll] = useState(1)
     const urlInfo = 'https://api.spacexdata.com/v3/info'
     const urlHis = 'https://api.spacexdata.com/v3/history'
 
@@ -20,10 +20,10 @@ const Home = ({ stylePacks }) => {
         const element = event.target
         const scrollCurrent = element.scrollTop
         if(scrollCurrent > 0){
-            setViewScroll(false)
+            setViewScroll(0)
         }
         else if(scrollCurrent === 0){
-            setViewScroll(true)
+            setViewScroll(1)
         }
         
     }
@@ -50,6 +50,14 @@ const Home = ({ stylePacks }) => {
             {/*card*/}
             <div id="boxCard">
                 <div id="boxCard-C-G">
+                    <div id="viewMore" style={{opacity:viewScroll}}>
+                            <div className="boxView">
+                                <p>VIEW MORE DETAIL</p>
+                            </div>
+                            <div  className="boxView">
+                                <div id="triangleMore" className="shapes"/>
+                            </div>
+                    </div>
                     <div id="gradientColor-U" />
                     <div id="boxCardContent" onScroll={scrollHandle}>
                         {jsonHis.map((history, index) => (

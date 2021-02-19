@@ -57,6 +57,10 @@ const RocketDetail = () =>{
         diameter: `${compositeFairing.diameter.meters} m (${compositeFairing.diameter.feet} ft)`,
     }
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [])
+
     return (
         <>
             <div className="containerDetail">

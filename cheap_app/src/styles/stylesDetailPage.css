@@ -9,15 +9,17 @@
     flex: 1;
 }
 
-.detail > div > h2{
+.detail > div > h2, .detailLeftInfo > h2{
     text-transform: uppercase;
     font-size: 4vh;
     font-family: 'Viga', sans-serif;
+    margin-top: 0;
 }
 
-.detail > div > p{
+.detail > div > p, .detailLeftInfo > p{
     font-size: 2.6vh;
-    font-family: 'Hind Siliguri', sans-serif
+    font-family: 'Hind Siliguri', sans-serif;
+    margin: 0;
 }
 
 .detailLeft{
@@ -26,26 +28,40 @@
     flex: 2;
 }
 
+.detailListRow{
+    display: flex;
+    flex-direction: row;
+}
+
+.detailListRow > .detailList{
+    width: 35%;
+}
+
 .detailRight{
     display: flex;
     flex-direction: column;
     flex: 1;
 }
 
+.detailLeftInfo{
+    margin-top: 10%;
+}
+
 .detailList{
     display: flex;
     flex-direction: column;
-    margin-top: 0;
+    margin-top: 10%;
+    margin-right: 5%;
 }
 
 .titleDetailList{
     text-align: center;
-    border-bottom: 7px white solid;
     margin-bottom: 40px;
 }
 
 .titleDetailList > h3{
     font-size: 3vh;
+    text-transform: uppercase;
     margin: 0;
 }
 
@@ -96,7 +112,6 @@
     display: flex;
     flex-direction: row;
     flex: 1;
-    flex-wrap: wrap;
 }
 
 #aboutDetail > div > p, .detailListInfo > div > p{
@@ -109,6 +124,29 @@
     }
 
     .containerDetail{
+        width: 100%;
+    }
+}
+
+@media (max-width: 550px) {
+    #aboutDetail{
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+
+    .detailLeftInfo, .detailRight > div{
+        margin-left: 10%;
+        padding-right: 10%;
+    }
+}
+
+@media (max-width: 430px) {
+    .detailListRow{
+        flex-direction: column;
+    }
+
+    .detailListRow > .detailList{
         width: 100%;
     }
 }

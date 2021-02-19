@@ -6,6 +6,7 @@ import Rockets from './rockets'
 import Home from './home'
 import RocketDetail from './rocketDetail'
 import '../styles/stylesHome.css'
+import LaunchDetail from './launchDetail'
 
 const screenHeight = window.innerHeight
 
@@ -48,6 +49,9 @@ const RoutePath = () => {
                 </Route>
                 <Route path="/rocketsDetail/:rocketId">
                     <RocketDetail/>
+                </Route>
+                <Route path="/launchDetail/:launchId">
+                    <LaunchDetail/>
                 </Route>
                 </Switch>
             </div>

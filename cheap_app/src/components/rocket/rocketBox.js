@@ -2,12 +2,12 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const RocketBox = ({ rocket }) =>{
-    const { id, flickr_images, rocket_name, description } = rocket
+    const { rocket_id, flickr_images, rocket_name, description } = rocket
 
     return(
             <div className="box">
                 <Link className="boxRocketLink" to={{
-                    pathname: `/rocketsDetail/${id}`,
+                    pathname: `/rocketsDetail/${rocket_id}`,
                     state: {
                         rocket: rocket
                     }

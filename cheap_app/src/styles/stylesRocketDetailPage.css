@@ -146,6 +146,7 @@
 
     .detailListRow, .detailListCol{
         flex-direction: column;
+        max-width: 100%;
     }
 
     .detailListRow > .detailList{

@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/CheapApp/static/css/main.21fb08e7.chunk.css",
+    "main.js": "/CheapApp/static/js/main.a3375b62.chunk.js",
+    "main.js.map": "/CheapApp/static/js/main.a3375b62.chunk.js.map",
+    "runtime-main.js": "/CheapApp/static/js/runtime-main.1d172f14.js",
+    "runtime-main.js.map": "/CheapApp/static/js/runtime-main.1d172f14.js.map",
+    "static/js/2.2835ff73.chunk.js": "/CheapApp/static/js/2.2835ff73.chunk.js",
+    "static/js/2.2835ff73.chunk.js.map": "/CheapApp/static/js/2.2835ff73.chunk.js.map",
+    "static/js/3.5fe3aa89.chunk.js": "/CheapApp/static/js/3.5fe3aa89.chunk.js",
+    "static/js/3.5fe3aa89.chunk.js.map": "/CheapApp/static/js/3.5fe3aa89.chunk.js.map",
+    "index.html": "/CheapApp/index.html",
+    "static/css/main.21fb08e7.chunk.css.map": "/CheapApp/static/css/main.21fb08e7.chunk.css.map",
+    "static/js/2.2835ff73.chunk.js.LICENSE.txt": "/CheapApp/static/js/2.2835ff73.chunk.js.LICENSE.txt",
+    "static/media/stylesHome.css": "/CheapApp/static/media/home.96bf35f1.jpg",
+    "static/media/logo.e548eb03.png": "/CheapApp/static/media/logo.e548eb03.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1d172f14.js",
+    "static/js/2.2835ff73.chunk.js",
+    "static/css/main.21fb08e7.chunk.css",
+    "static/js/main.a3375b62.chunk.js"
+  ]
+}

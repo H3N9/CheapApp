@@ -1,6 +1,28 @@
 #detail-b{
-    background-image: url('../images//launch/bg2.png');
+    background-image: url('../images//launch/bg2.jpg');
     background-size: cover;
     width: 100%;
     height: 100vh;
+}
+#boxDetail-1{
+    top: 20vh;
+    left: 3vw;
+    position: absolute;
+}
+#date{
+    float:left;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#date > h1 {
+    margin: 0;
+    font-size: 2vw;
+}
+#im-detail{
+    float:left;
+}
+#logoImage{
+    float:left;
 }

@@ -9,6 +9,8 @@ const RocketDetail = () =>{
     const { rocket } = location.state
     const payload_weights = rocket.payload_weights
     const engines = rocket.engines
+    const firstStage = rocket.first_stage
+    const secondStage = rocket.second_stage
     const image1 = rocket.flickr_images[1]
 
     const size = {
@@ -31,10 +33,29 @@ const RocketDetail = () =>{
         thrust: `${engines.thrust_vacuum.kN} kN (${engines.thrust_vacuum.lbf} lbf)`
     }
 
+    const firstStageSeaLevel = {
+        thrust: `${firstStage.thrust_sea_level.kN} kN (${engines.thrust_sea_level.lbf} lbf)`
+    }
 
-    useEffect(() => {
-        console.log(rocket)
-    }, [])
+    const firstStageVacuum = {
+        thrust: `${firstStage.thrust_vacuum.kN} kN (${engines.thrust_vacuum.lbf} lbf)`
+    }
+
+    const secondStageThrust = {
+        thrust: `${secondStage.thrust.kN} kN (${secondStage.thrust.lbf} lbf)`
+    }
+
+    const secondStagePayload = {
+        option1: secondStage.payloads.option_1 || "-",
+        option2: secondStage.payloads.option_2 || "-"
+    }
+
+    const compositeFairing = secondStage.payloads.composite_fairing
+
+    const secondStageCompositeFairing = {
+        height: `${compositeFairing.height.meters} m (${compositeFairing.height.feet} ft)`,
+        diameter: `${compositeFairing.diameter.meters} m (${compositeFairing.diameter.feet} ft)`,
+    }
 
     return (
         <>
@@ -46,43 +67,48 @@ const RocketDetail = () =>{
                 <div className="detail" id="aboutDetail">
                     <div className="detailLeft">
                         <div className="detailLeftInfo">
+                            <h2>engines</h2>
+                            <p><b>type :</b> {engines.type}</p>
+                            <p><b>number :</b> {engines.number}</p>
+                            <div className="detailListRow">
+                                <RocketDetailList title="sea level" data={sea_level} />
+                                <RocketDetailList title="vacuum" data={vacuum} />
+                            </div>
+                        </div>
+                        <div className="detailLeftInfo">
+                            <h2>first stage</h2>
+                            <p><b>fuel amount tons : </b> {firstStage.fuel_amount_tons}</p>
+                            <p><b>burn time sec : </b> {firstStage.burn_time_sec}</p>
+                            <div className="detailListRow">
+                                <RocketDetailList title="sea level" data={firstStageSeaLevel} />
+                                <RocketDetailList title="vacuum" data={firstStageVacuum} />
+                            </div>
+                        </div>
+                        <div className="detailLeftInfo">
+                            <h2>second stage</h2>
+                            <p><b>fuel amount tons : </b> {secondStage.fuel_amount_tons}</p>
+                            <p><b>burn time sec : </b> {secondStage.burn_time_sec}</p>
+                            <div className="detailListRow">
+                                <RocketDetailList title="thrust" data={secondStageThrust} />
+                                <RocketDetailList title="payload" data={secondStagePayload} />
+                            </div>
+                            <div className="detailListCol">
+                                <RocketDetailList title="payload composite fairing" data={secondStageCompositeFairing} />
+                            </div>
+                        </div>
+                    </div>
+                    <div className="detailRight">
+                        <div><img src={image1} width="100%" /></div>
+                        <div className="detailLeftInfo">
                             <h2>About</h2>
                             <p><b>first flight :</b> {rocket.first_flight}</p>
                             <p><b>rocket_type:</b> {rocket.rocket_type}</p>
                             <p><b>country :</b> {rocket.country}</p>
                             <p><b>company :</b> {rocket.company}</p>
                         </div>
-                        <div className="detailLeftInfo">
-                            <h2>engines</h2>
-                            <p><b>type :</b> {engines.type}</p>
-                            <p><b>number :</b> {engines.number}</p>
-                            <div className="detailListRow">
-                                <RocketDetailList title="sea_level" data={sea_level} />
-                                <RocketDetailList title="vacuum" data={vacuum} />
-                            </div>
-                        </div>
-                    </div>
-                    <div className="detailRight">
-                        <div><img src={image1} width="100%" /></div>
                         <RocketDetailList title="size" data={size} />
                         <RocketDetailList title="payload weights" data={payloadWeights} />
-                        {/*}
-                        <div className="detailList">
-                            <div className="titleDetailList">
-                                <h3>payload weights</h3>
-                            </div>
-                            <div className="detailListInfo">
-                                {payload_weights.map((payload_weight) =>{
-                                    return(
-                                        <div>
-                                            <p><b>{payload_weight.name}</b></p>
-                                            <p>{payload_weight.kg} kg ({payload_weight.lb} lb)</p>
-                                        </div>
-                                    )
-                                })}
-                            </div>
-                        </div>
-                            {*/}
+                        {rocket.flickr_images.slice(2).map((image) => <div><img src={image} width="100%" /></div>)}
                     </div>
                 </div>
             </div>

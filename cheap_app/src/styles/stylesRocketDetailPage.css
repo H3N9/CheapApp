@@ -144,7 +144,7 @@
         padding-right: 10%;
     }
 
-    .detailListRow{
+    .detailListRow, .detailListCol{
         flex-direction: column;
     }
 

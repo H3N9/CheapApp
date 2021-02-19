@@ -13,13 +13,19 @@ const Rockets = () => {
     }, [])
 
     return(
-        <div className="container">
-            {rockets.map((rocket) =>{
-                return(
-                    <RocketBox key={rocket.id} rocket={rocket}/>
-                )
-            })}
-        </div>
+        <React.Fragment>
+            <div id="rocket-i">
+                <div><h1>ROCKET</h1></div>
+                <div className="gradientColor"></div>
+            </div>
+            <div className="container">
+                {rockets.map((rocket) =>{
+                    return(
+                        <RocketBox key={rocket.id} rocket={rocket}/>
+                    )
+                })}
+            </div>
+        </React.Fragment>
     )
 }
 

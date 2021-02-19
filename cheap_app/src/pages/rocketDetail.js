@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useLocation, useParams } from 'react-router-dom'
 import RocketDetailList from '../components/rocket/rocketDetailList'
-import "../styles/stylesDetailPage.css"
+import "../styles/stylesRocketDetailPage.css"
 
 const RocketDetail = () =>{
     const location = useLocation()

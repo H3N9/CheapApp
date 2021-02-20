@@ -7,19 +7,23 @@ const Rockets = () => {
     const [rockets, setRockets] = useState([])
 
     useEffect(() =>{
-        fetchData('https://api.spacexdata.com/v3/rockets', (data) =>{
-            setRockets(data)
-        })
+        fetchData('https://api.spacexdata.com/v3/rockets', setRockets)
     }, [])
 
     return(
-        <div className="container">
-            {rockets.map((rocket) =>{
-                return(
-                    <RocketBox key={rocket.id} rocket={rocket}/>
-                )
-            })}
-        </div>
+        <React.Fragment>
+            <div id="rocket-i">
+                <div><h1>ROCKET</h1></div>
+                <div className="gradientColor"></div>
+            </div>
+            <div className="container">
+                {rockets.map((rocket) =>{
+                    return(
+                        <RocketBox key={rocket.rocket_id} rocket={rocket}/>
+                    )
+                })}
+            </div>
+        </React.Fragment>
     )
 }
 

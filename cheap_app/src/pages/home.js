@@ -32,8 +32,9 @@ const Home = () => {
         <React.Fragment>
             {/*Image with text on home page*/}
             <div className="boxImage">
+                <div id="opcitryWrapI" />
                 <img id="name-i-image" src={Logo} alt="SpaceX_logo" />
-                <p id="detail-i-image">{jsonInfo.summary}</p>
+                    <p id="detail-i-image">{jsonInfo.summary}</p>
             </div>
 
             <div id="boxHistories">

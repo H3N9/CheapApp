@@ -107,7 +107,7 @@ const RocketDetailInfo = ({ rocket }) =>{
                         </div>
                         <RocketDetailList title="size" data={size} />
                         <RocketDetailList title="payload weights" data={payloadWeights} />
-                        {rocket.flickr_images.slice(2).map((image) => <div><img src={image} width="100%" /></div>)}
+                        {rocket.flickr_images.slice(2).map((image) => <div key={image}><img src={image} width="100%" /></div>)}
                     </div>
                 </div>
             </div>

@@ -79,7 +79,7 @@ const Launch = () => {
             <div id="launch-i">
                 <h1>LAUNCH</h1>
             </div>
-            <div id="spaceDetails" >
+            {/*<div id="spaceDetails" >
                 <div className="select">
                     <select name="slct" className="slct" onChange={selectYearHandle}>
                         <option value="0" selected disabled>YEAR</option>
@@ -99,7 +99,7 @@ const Launch = () => {
                 <div className="input">
                     <input value={searchName} onChange={searchNameHandle}/>
                 </div>
-            </div>
+            </div>*/}
             <div id="launchDetails">
                 <div id="boxDetail">
                     {displayLaunch.map((launch, index) => (<CardLaunch key={index} id={launch.flight_number} launch={launch} />))}

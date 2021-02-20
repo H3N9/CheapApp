@@ -11,10 +11,9 @@ const CardLaunch = ({launch, id}) => {
     return (
         <Link className="cardLaunch" to={{
             pathname: `/launchDetail/${id}`,
+            state: launch
         }}>
-            <div className="imagLaunch">
-                <img src={logo} className="image-launch" alt={logo} />
-            </div>
+            <img src={logo} className="image-launch" alt={logo} />
 
             <div className="titleLuanch boxCenter">
                 <h1 className="text">{mission_name}</h1>

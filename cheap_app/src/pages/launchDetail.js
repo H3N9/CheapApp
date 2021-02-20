@@ -1,17 +1,24 @@
 import React, { useEffect, useState } from 'react'
 import '../styles/styleLaunchDetail.css'
-import {useParams} from 'react-router-dom'
+import {useParams, useLocation} from 'react-router-dom'
 import {fetchData} from '../tools/fetch'
 import LaunchInfo from '../components/launch/launchInfo'
 
 
 const LaunchDetail = () => {
+    const location = useLocation()
     const {launchId} = useParams()
     const [launchInfo, setLaunchInfo] = useState(false)
 
     useEffect(() => {
-        const urlLaunch = `https://api.spacexdata.com/v3/launches/${launchId}`
-        fetchData(urlLaunch, setLaunchInfo)
+        if(location.state === undefined){
+            const urlLaunch = `https://api.spacexdata.com/v3/launches/${launchId}`
+            fetchData(urlLaunch, setLaunchInfo)
+        }
+        else{
+            setLaunchInfo(location.state)
+        }
+        
         
     }, [])
 

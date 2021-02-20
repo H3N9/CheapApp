@@ -27,10 +27,10 @@
     justify-content: center;
 }
 #boxDetail{
+    width: 90%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    width: 80%;
     overflow-y: scroll;
     height: 100%;
 

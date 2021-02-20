@@ -3,8 +3,8 @@ import BoxTextDetail from './boxTextDetail'
 import bg from '../../images/launch/bg2.jpg'
 
 const LaunchInfo = ({launch}) => {
-    const {launch_date_utc, mission_name, rocket, launch_site, launch_failure_details, launch_success, links } = launch
-    const {rocket_name, rocket_type, second_stage} = rocket
+    const {launch_date_utc, mission_name, rocket, launch_site, launch_failure_details, details, launch_success, links } = launch
+    const {rocket_name, rocket_id, rocket_type, second_stage} = rocket
     const {payloads} = second_stage
     const {payload_id, payload_type} = payloads[0]
     const { time, reason } = launch_failure_details || {}
@@ -33,14 +33,14 @@ const LaunchInfo = ({launch}) => {
     const detailOfLaunch = (sucess) => {
         if(sucess) {
             return (
-                <BoxTextDetail success={sucess} leftText={"LAUNCH SUCCESS"} rightText={""} title={false} />
+                <BoxTextDetail success={sucess} leftText={"LAUNCH SUCCESS"} rightText={""} title={false} button={false} />
             )
         }
         else {
             return (
                 <>
                 <BoxTextDetail success={sucess} leftText={"LAUNCH FAIL"} rightText={`${time} Times`} title={false} />
-                <BoxTextDetail success={sucess} leftText={""} rightText={reason} title={false} />
+                <BoxTextDetail success={sucess} leftText={""} rightText={reason} title={false} button={false} />
                 </>
             )
         }
@@ -58,9 +58,9 @@ const LaunchInfo = ({launch}) => {
                 </div>
 
                 <div id="im-detail">
-                    <BoxTextDetail leftText={"MISSION"} rightText={mission_name} title={true} />
-                    <BoxTextDetail leftText={rocket_name} rightText={""} title={false} />
-                    <BoxTextDetail leftText={"TYPE"} rightText={rocket_type} title={false} />
+                    <BoxTextDetail leftText={"MISSION"} rightText={mission_name} title={true} button={false} />
+                    <BoxTextDetail leftText={rocket_name} rightText={"ROCKET DETAIL"} title={false} button={true} id={rocket_id} />
+                    <BoxTextDetail leftText={"TYPE"} rightText={rocket_type} title={false} button={false} />
                     {detailOfLaunch(launch_success)}  
                 </div>
 
@@ -76,21 +76,25 @@ const LaunchInfo = ({launch}) => {
                 <h1>Detail</h1>
 
                 <div className="textDetail">
-                    <h3>PAYLOAD:</h3>
+                    <h3>PAYLOAD :</h3>
                     <h3>{payload_id}</h3>
                 </div>
 
                 <div className="textDetail">
-                    <h3>TYPE:</h3>
+                    <h3>TYPE :</h3>
                     <h3>{payload_type}</h3>
                 </div>
 
                 <div className="textDetail">
-                    <h3>LAUNCH SITE:</h3>
+                    <h3>LAUNCH SITE :</h3>
                     <h3>{site_name}</h3>
                 </div>
 
                 <div id="underlineDetail"/>
+
+                <div id="longReason">
+                    {details}
+                </div>
 
             </div>
 

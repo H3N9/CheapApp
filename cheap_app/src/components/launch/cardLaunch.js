@@ -13,7 +13,7 @@ const CardLaunch = ({launch, id}) => {
             pathname: `/launchDetail/${id}`,
             state: launch
         }}>
-            <img src={logo} className="image-launch" alt={logo} />
+            <img src={logo} className="image-launch" alt={"Image logo"} />
 
             <div className="titleLuanch boxCenter">
                 <h1 className="text">{mission_name}</h1>

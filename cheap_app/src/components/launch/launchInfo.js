@@ -1,6 +1,5 @@
 import React from 'react'
 import BoxTextDetail from './boxTextDetail'
-import bg from '../../images/launch/bg2.jpg'
 
 const LaunchInfo = ({launch}) => {
     const {launch_date_utc, mission_name, rocket, launch_site, launch_failure_details, details, launch_success, links } = launch
@@ -66,7 +65,7 @@ const LaunchInfo = ({launch}) => {
 
 
                 <div id="logoImage">
-                    <img src={mission_patch_small} />
+                    <img src={mission_patch_small} alt="Logo" />
                 </div>
             </div>
 

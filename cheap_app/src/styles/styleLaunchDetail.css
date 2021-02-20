@@ -3,14 +3,20 @@
     background-size: cover;
     width: 100%;
     height: 100vh;
+    overflow-y: scroll;
+}
+.space-b{
+    width: 100%;
+    height: 20vh;
 }
 #boxDetail-1{
     top: 20vh;
+    width: 100%;
     left: 3vw;
-    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
 }
 #date{
-    float:left;
     color: white;
     display: flex;
     flex-direction: column;
@@ -21,8 +27,98 @@
     font-size: 2vw;
 }
 #im-detail{
-    float:left;
+    width: 35vw;
+    display: flex;
+    flex-direction: column;
+}
+.boxTextDetail{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    color: white;
+    margin-bottom: 1%;
+}
+.rightText{
+    display: flex;
+    width: 45%;
+    margin-left: 5%;
+    justify-content: flex-start;
+}
+.leftText{
+    display: flex;
+    justify-content: flex-end;
+    width: 45%;
+    margin-right: 5%;
 }
 #logoImage{
-    float:left;
+    width: 10vw;
+}
+#logoImage > img{
+    width: 100%;
+}
+.detailText{
+    margin: 0;
+    font-size: 1.5vw;
+}
+.title{
+    font-size: 2.5vw;
+}
+#detailLaunch{
+    width: 100%;
+    color: white;
+}
+
+#detailLaunch > h3, h1 {
+    margin: 0;
+}
+.textDetail{
+    display: flex;
+}
+.textDetail > h3 {
+    width: 10%;
+}
+#underlineDetail{
+    width: 30%;
+    height: 0.3vh;
+    background-color: white;
+}
+#gallaryImage{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+#video{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    padding: 2.5% 0 2.5% 0;
+}
+#showcase{
+    width: 100%;
+    display: flex;
+}
+#gallary{
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.imageShowcase{
+    width: 20vw;
+    height: auto;
+    margin: 2.5%;
+}
+#titleShowcase{
+    width: 100%;
+    display: flex;
+}
+#videoShowcase{
+    width: 90%;
+    height: 40%;
+}
+.titleShowcase-t{
+    width: 50%;
+    color: white;
+    height: 5vh;
+    font-size: 4vmin;
+    margin-left: 1vw;
 }

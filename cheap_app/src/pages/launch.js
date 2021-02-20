@@ -79,25 +79,27 @@ const Launch = () => {
             <div id="launch-i">
                 <h1>LAUNCH</h1>
             </div>
-            <div id="spaceDetails" >
-                <div className="select">
-                    <select name="slct" id="slct" onChange={selectYearHandle}>
-                        <option value="0" selected disabled>YEAR</option>
-                        <option value="any">ANY YEAR</option>
-                        <option value="reverse">REVERSE YEAR</option>
-                        {years.map((year, index) => <option key={index} value={year}>{year}</option>)}
-                    </select>
-                </div>
-                <div className="select">
-                    <select name="slct" id="slct" onChange={setSelectResultHandle}>
-                        <option value="0" selected disabled>RESULT</option>
-                        <option value="any" >ANY RESULT</option>
-                        <option value="success" >SUCCESS</option>
-                        <option value="fail" >FAIL</option>
-                    </select>
+            <div id="searchBar" >
+                <div className="selectBox">
+                    <div className="select">
+                        <select name="slct" id="slct" onChange={selectYearHandle}>
+                            <option value="0" selected disabled>YEAR</option>
+                            <option value="any">ANY YEAR</option>
+                            <option value="reverse">REVERSE YEAR</option>
+                            {years.map((year, index) => <option key={index} value={year}>{year}</option>)}
+                        </select>
+                    </div>
+                    <div className="select">
+                        <select name="slct" id="slct" onChange={setSelectResultHandle}>
+                            <option value="0" selected disabled>RESULT</option>
+                            <option value="any" >ANY RESULT</option>
+                            <option value="success" >SUCCESS</option>
+                            <option value="fail" >FAIL</option>
+                        </select>
+                    </div>
                 </div>
                 <div className="input">
-                    <input value={searchName} onChange={searchNameHandle}/>
+                    <input value={searchName} onChange={searchNameHandle} placeholder="Search name"/>
                 </div>
             </div>
             <div id="launchDetails">

@@ -137,8 +137,8 @@ body > p{
 
 .container > div p {
     /*   border: 2px solid blue; */
-    font-family: 'Playball', cursive;
     font-size: 20px;
+    font-family: 'Hind Siliguri', sans-serif;
     margin-top: 10px;
     line-height: 1;
     transition: all 200ms 50ms ease-in-out;

@@ -20,11 +20,13 @@ const RocketDetail = () =>{
     }, [])
 
     return (
-        <React.Fragment>
-            {rocket !== undefined &&
-                <RocketDetailInfo rocket={rocket}/>
-            }
-        </React.Fragment>
+        <div className="rocketBackground">
+            <div className="gradient">
+                {rocket !== undefined &&
+                    <RocketDetailInfo rocket={rocket}/>
+                }
+            </div>
+        </div>
     )
 }
 

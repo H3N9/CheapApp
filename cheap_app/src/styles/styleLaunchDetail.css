@@ -77,3 +77,8 @@
 .textDetail > h3 {
     width: 10%;
 }
+#underlineDetail{
+    width: 30%;
+    height: 0.3vh;
+    background-color: white;
+}

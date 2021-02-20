@@ -95,6 +95,8 @@ const LaunchDetail = () => {
                     <h3>{site_name}</h3>
                 </div>
 
+                <div id="underlineDetail"/>
+
             </div>
 
         </div>

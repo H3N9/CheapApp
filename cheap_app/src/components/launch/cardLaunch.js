@@ -3,14 +3,14 @@ import '../../styles/styleLaunCom.css'
 import {Link} from 'react-router-dom'
 
 
-const CardLaunch = ({launch}) => {
-    const {flight_number, links, launch_year, mission_name, launch_success } = launch
+const CardLaunch = ({launch, id}) => {
+    const {links, launch_year, mission_name, launch_success } = launch
     const resultLaunch = launch_success? "LAUNCH SUCCESS":"LAUNCH FAIL"
     const logo = links.mission_patch_small
     const reusltMission = launch_success? "success":"fail"
     return (
         <Link className="cardLaunch" to={{
-            pathname: `/launchDetail/${flight_number}`,
+            pathname: `/launchDetail/${id}`,
             state: {
                 launch: launch
             }

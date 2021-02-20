@@ -21,7 +21,7 @@ const Launch = () => {
 
             <div id="launchDetails">
                 <div id="boxDetail">
-                    {launchData.map((launch) => (<CardLaunch launch={launch} />))}
+                    {launchData.map((launch, index) => (<CardLaunch key={index} id={index} launch={launch} />))}
                 </div>
             </div>
             <div id="endling" />

@@ -6,7 +6,7 @@ const RocketDetailInfo = ({ rocket }) =>{
     const engines = rocket.engines
     const firstStage = rocket.first_stage
     const secondStage = rocket.second_stage
-    const image1 = rocket.flickr_images[1]
+    const image1 = rocket.flickr_images[0]
 
     const size = {
         height: `${rocket.height.meters} m (${rocket.height.feet} ft)`,
@@ -97,7 +97,7 @@ const RocketDetailInfo = ({ rocket }) =>{
                         </div>
                     </div>
                     <div className="detailRight">
-                        <div><img src={image1} width="100%" /></div>
+                        <div className="detailImage"><img src={image1} width="100%" /></div>
                         <div className="detailLeftInfo">
                             <h2>About</h2>
                             <p><b>first flight :</b> {rocket.first_flight}</p>
@@ -107,7 +107,9 @@ const RocketDetailInfo = ({ rocket }) =>{
                         </div>
                         <RocketDetailList title="size" data={size} />
                         <RocketDetailList title="payload weights" data={payloadWeights} />
-                        {rocket.flickr_images.slice(2).map((image) => <div key={image}><img src={image} width="100%" /></div>)}
+                        <div className="detailImage">
+                            {rocket.flickr_images.slice(1).map((image) => <div key={image}><img src={image} width="100%" /></div>)}
+                        </div>
                     </div>
                 </div>
             </div>

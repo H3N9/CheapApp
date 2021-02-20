@@ -21,6 +21,7 @@ const RocketDetail = () =>{
 
     return (
         <div className="rocketBackground">
+            <div className="navDummy"></div>
             <div className="gradient">
                 {rocket !== undefined &&
                     <RocketDetailInfo rocket={rocket}/>

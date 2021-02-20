@@ -80,6 +80,7 @@
 }
 #logoImage > img{
     width: 100%;
+    height: auto;
 }
 .detailText{
     margin: 0;

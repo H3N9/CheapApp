@@ -1,12 +1,21 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import '../styles/styleLaunchDetail.css'
 import {useLocation} from 'react-router-dom'
 import BoxTextDetail from '../components/launch/boxTextDetail'
+import {fetchData} from '../tools/fetch'
 
 
 const LaunchDetail = () => {
     const location = useLocation()
-    const { launch} = location.state
+    const { launch } = location.state
+
+
+    useEffect(() => {
+        fetchData()
+    }, [])
+
+
+
     const {launch_date_utc, mission_name, rocket, launch_site, launch_failure_details, launch_success, links } = launch
     const {rocket_name, rocket_type, second_stage} = rocket
     const {payloads} = second_stage
@@ -32,6 +41,7 @@ const LaunchDetail = () => {
     const date = dateTime.getDate()
     const month = months[dateTime.getMonth()]
     const year = dateTime.getFullYear()
+
 
     const detailOfLaunch = (sucess) => {
         if(sucess) {
@@ -97,6 +107,32 @@ const LaunchDetail = () => {
 
                 <div id="underlineDetail"/>
 
+            </div>
+
+            <div className="space-b" />
+
+
+            <div id="gallaryImage">
+                <div id="titleShowcase">
+                    <div className="titleShowcase-t">Video</div>
+                    <div className="titleShowcase-t">Gallary</div>
+                </div>
+
+                <div id="showcase">
+                    <div id="video">
+                        <iframe id="videoShowcase" src={`https://www.youtube.com/embed/${links.youtube_id}/`}  allowFullScreen />
+                    </div>
+
+                    <div id="gallary">
+                        {links.flickr_images.map((link) => {
+                            return (
+                                <img src={link} class="imageShowcase" alt={link} />
+                            )
+                        })}
+                    </div>
+                </div>
+
+                
             </div>
 
         </div>

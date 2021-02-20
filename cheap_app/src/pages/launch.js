@@ -102,7 +102,7 @@ const Launch = () => {
             </div>
             <div id="launchDetails">
                 <div id="boxDetail">
-                    {launchData.map((launch, index) => (<CardLaunch key={index} id={index} launch={launch} />))}
+                    {displayLaunch.map((launch, index) => (<CardLaunch key={index} id={index} launch={launch} />))}
                 </div>
             </div>
             <div id="endling" />

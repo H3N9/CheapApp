@@ -82,3 +82,43 @@
     height: 0.3vh;
     background-color: white;
 }
+#gallaryImage{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+#video{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    padding: 2.5% 0 2.5% 0;
+}
+#showcase{
+    width: 100%;
+    display: flex;
+}
+#gallary{
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.imageShowcase{
+    width: 20vw;
+    height: auto;
+    margin: 2.5%;
+}
+#titleShowcase{
+    width: 100%;
+    display: flex;
+}
+#videoShowcase{
+    width: 90%;
+    height: 40%;
+}
+.titleShowcase-t{
+    width: 50%;
+    color: white;
+    height: 5vh;
+    font-size: 4vmin;
+    margin-left: 1vw;
+}

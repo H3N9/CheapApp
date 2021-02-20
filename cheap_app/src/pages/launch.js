@@ -81,7 +81,7 @@ const Launch = () => {
             </div>
             <div id="spaceDetails" >
                 <div className="select">
-                    <select name="slct" id="slct" onChange={selectYearHandle}>
+                    <select name="slct" className="slct" onChange={selectYearHandle}>
                         <option value="0" selected disabled>YEAR</option>
                         <option value="any">ANY YEAR</option>
                         <option value="reverse">REVERSE YEAR</option>
@@ -89,7 +89,7 @@ const Launch = () => {
                     </select>
                 </div>
                 <div className="select">
-                    <select name="slct" id="slct" onChange={setSelectResultHandle}>
+                    <select name="slct" className="slct" onChange={setSelectResultHandle}>
                         <option value="0" selected disabled>RESULT</option>
                         <option value="any" >ANY RESULT</option>
                         <option value="success" >SUCCESS</option>
@@ -102,7 +102,7 @@ const Launch = () => {
             </div>
             <div id="launchDetails">
                 <div id="boxDetail">
-                    {displayLaunch.map((launch, index) => (<CardLaunch key={index} id={index} launch={launch} />))}
+                    {displayLaunch.map((launch, index) => (<CardLaunch key={index} id={launch.flight_number} launch={launch} />))}
                 </div>
             </div>
             <div id="endling" />

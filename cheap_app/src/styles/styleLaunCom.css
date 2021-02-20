@@ -2,9 +2,8 @@
     background-color: rgb(40, 40, 40);
     display: flex;
     flex-direction: column;
-    width: 30%;
+    width: 450px;
     height: 55vh;
-    margin-left: 2.5%;
     margin-bottom: 2%;
     text-align: center;
     text-decoration: none;

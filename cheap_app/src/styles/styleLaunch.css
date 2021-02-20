@@ -29,6 +29,7 @@
 #boxDetail{
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
     width: 80%;
     overflow-y: scroll;
     height: 100%;
@@ -40,7 +41,7 @@
     background-color: black;
 }
 
-#slct {
+.slct {
     -webkit-appearance: none;
     -moz-appearance: none;
     -ms-appearance: none;

@@ -6,7 +6,7 @@ import Logo from '../images/home/logo.png'
 const BoxNav = ({ text, path }) => {
     return (
         <Link className="boxNav" to={path}>
-            {path !== "/"? 
+            {path !== "/CheapApp"? 
                 (<p>{text}</p>):
                 (<img className="logo" src={Logo} alt="Logo_SpaceX" alt="logo"/>)}
         </Link>

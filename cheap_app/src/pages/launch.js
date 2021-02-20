@@ -104,7 +104,7 @@ const Launch = () => {
             </div>
             <div id="launchDetails">
                 <div id="boxDetail">
-                    {displayLaunch.map((launch, index) => (<CardLaunch key={index} id={index} launch={launch} />))}
+                    {displayLaunch.map((launch, index) => (<CardLaunch key={index} id={launch.flight_number} launch={launch} />))}
                 </div>
             </div>
             <div id="endling" />

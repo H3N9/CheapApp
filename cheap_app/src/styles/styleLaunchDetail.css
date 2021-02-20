@@ -3,109 +3,150 @@
     background-size: cover;
     width: 100%;
     height: 100vh;
-    overflow-y: scroll;
+    position: fixed;
+    z-index: -1;
 }
 .space-b{
     width: 100%;
     height: 20vh;
 }
 #boxDetail-1{
-    top: 20vh;
-    width: 100%;
-    left: 3vw;
+    width: 98%;
     display: flex;
     flex-wrap: wrap;
+    margin-left: 2%;
+    
+}
+@media screen and (max-width: 900px){
+    #boxDetail-1{
+        justify-content: center;
+    }
+    
 }
 #date{
+    text-align: center;
     color: white;
     display: flex;
     flex-direction: column;
+
+}
+#buttonRocket{
+    text-decoration: none;
+    width: 70%;
+    height: 100%;
+    border: 0.2vw solid white;
+    color: white;
+    display: flex;
+    justify-content: center;
     align-items: center;
+    font-size: 2vmin;
+    transition: 0.5s;
+}
+#buttonRocket:hover{
+    color: black;
+    background-color: white;
 }
 #date > h1 {
     margin: 0;
-    font-size: 2vw;
+    font-size: 4vmin;
 }
 #im-detail{
-    width: 35vw;
+    width: 650px;
     display: flex;
     flex-direction: column;
 }
 .boxTextDetail{
     display: flex;
     width: 100%;
-    align-items: center;
     color: white;
     margin-bottom: 1%;
 }
 .rightText{
     display: flex;
+    padding-right: 2%;
     width: 45%;
     margin-left: 5%;
     justify-content: flex-start;
 }
 .leftText{
+    padding-left: 2%;
     display: flex;
     justify-content: flex-end;
     width: 45%;
     margin-right: 5%;
 }
 #logoImage{
-    width: 10vw;
+    width: 150px;
 }
 #logoImage > img{
     width: 100%;
 }
 .detailText{
     margin: 0;
-    font-size: 1.5vw;
+    font-size: 3vmin;
 }
 .title{
-    font-size: 2.5vw;
+    font-size: 5vmin;
 }
 #detailLaunch{
-    width: 100%;
+    width: 98%;
     color: white;
-}
+    margin-left: 2%;
 
-#detailLaunch > h3, h1 {
+}
+#longReason{
+    font-size: 2vmin;
+    padding: 0.5% 0;
+}
+#detailLaunch > h1 {
     margin: 0;
+    font-size: 4vmin;
 }
 .textDetail{
     display: flex;
+    width: 100%;
+    font-size: 2.5vmin;
 }
 .textDetail > h3 {
-    width: 10%;
+    margin: 0.5% 0;
+    width: 200px;
 }
 #underlineDetail{
-    width: 30%;
+    width: 70vmin;
     height: 0.3vh;
     background-color: white;
 }
-#gallaryImage{
+/* #gallaryImage{
     width: 100%;
     display: flex;
     flex-direction: column;
+} */
+#showcase{
+    display: flex;
+    min-height: 500px;
+    flex-wrap: wrap;
+    padding-bottom: 100px;
+    width: 100%;
+    justify-content: center;
 }
 #video{
-    width: 50%;
     display: flex;
-    justify-content: center;
-    padding: 2.5% 0 2.5% 0;
+    flex-direction: column;
+    width: 900px;
 }
-#showcase{
-    width: 100%;
-    display: flex;
+#gallaryShowcase{
+    width: 900px;
 }
-#gallary{
-    width: 50%;
+
+.gallary{
     display: flex;
     flex-wrap: wrap;
+    justify-content:space-around;
+    width: 100%;
 }
 .imageShowcase{
-    width: 20vw;
-    height: auto;
-    margin: 2.5%;
+    width: 400px;
+    margin-bottom: 1%;
 }
 #titleShowcase{
     width: 100%;
@@ -113,12 +154,13 @@
 }
 #videoShowcase{
     width: 90%;
-    height: 40%;
+    min-height: 400px;
+    align-self: center;
 }
 .titleShowcase-t{
-    width: 50%;
     color: white;
     height: 5vh;
     font-size: 4vmin;
-    margin-left: 1vw;
+    margin-left: 5%;
+    padding: 20px 0;
 }

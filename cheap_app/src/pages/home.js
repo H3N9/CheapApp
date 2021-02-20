@@ -32,8 +32,9 @@ const Home = () => {
         <React.Fragment>
             {/*Image with text on home page*/}
             <div className="boxImage">
+                <div id="opcitryWrapI" />
                 <img id="name-i-image" src={Logo} alt="SpaceX_logo" />
-                <p id="detail-i-image">{jsonInfo.summary}</p>
+                    <p id="detail-i-image">{jsonInfo.summary}</p>
             </div>
 
             <div id="boxHistories">
@@ -52,7 +53,7 @@ const Home = () => {
                 <div id="boxCard-C-G">
                     <div id="viewMore" style={{opacity:viewScroll}}>
                             <div className="boxView">
-                                <p>VIEW MORE DETAIL</p>
+                                <p>VIEW MORE DETAILS</p>
                             </div>
                             <div  className="boxView">
                                 <div id="triangleMore" className="shapes"/>

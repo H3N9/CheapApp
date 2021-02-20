@@ -6,7 +6,7 @@ import '../styles/stylesComponentHome.css'
 const NavBar = ({ addColor }) => {
     return (
         <div className={addColor}>
-            <BoxNav text={'Home'} path="/" />
+            <BoxNav text={'Home'} path="/CheapApp" />
             <BoxNav text={'Rockets'} path="/rockets" />
             <BoxNav text={'Launch'} path="/launch" />   
         </div>

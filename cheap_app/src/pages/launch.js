@@ -26,7 +26,7 @@ const Launch = () => {
     const filterLuanch = ({ year, result, name, rocket }) =>{
         let newLaunches = launchData.slice()
         
-        /* filter and reverse year */
+        /* filter */
         if (year === "any" && result === "any" && name === "" && rocket === "any"){}
         else{
             newLaunches = newLaunches.filter((launch) =>{
@@ -48,10 +48,6 @@ const Launch = () => {
     
                 return (containCount === 4)
             })
-        }
-
-        if (year === "reverse"){
-            newLaunches.reverse()
         }
 
         setDisplayLaunch(newLaunches)
@@ -100,7 +96,6 @@ const Launch = () => {
                         <select name="slct" id="slct" onChange={selectYearHandle}>
                             <option value="0" selected disabled>YEAR</option>
                             <option value="any">ANY YEAR</option>
-                            <option value="reverse">REVERSE YEAR</option>
                             {years.map((year, index) => <option key={index} value={year}>{year}</option>)}
                         </select>
                     </div>

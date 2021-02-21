@@ -10,6 +10,7 @@ const Launch = () => {
     const [years, setYears] = useState([])
     const [selectYear, setSelectYear] = useState('any')
     const [selectResult, setSelectResult] = useState('any')
+    const [selectRocket, setSelectRocket] = useState('any')
     const [searchName, setSearchName] = useState('')
     const urlLuanch = "https://api.spacexdata.com/v3/launches"
     const {setlaunchMenuActive} = useActiveMenu()
@@ -22,7 +23,7 @@ const Launch = () => {
         setYears(years)
     }
 
-    const filterLuanch = ({ year, result, name }) =>{
+    const filterLuanch = ({ year, result, name, rocket }) =>{
         let newLaunches = launchData.slice()
         
         /* filter and reverse year */
@@ -46,9 +47,17 @@ const Launch = () => {
                 return launch.launch_success === isResult
             })
         }
+
+        if (rocket !== "any"){
+            newLaunches = newLaunches.filter((launch) =>{
+                const rocketName = launch.rocket.rocket_name
+                return  rocketName === rocket
+            })
+        }
         /* filter mission_name launch */
         newLaunches = newLaunches.filter((launch) =>{
-            return launch.mission_name.toLowerCase().includes(name.toLowerCase())
+            const rocketId = launch.rocket.rocket_id
+            return launch.mission_name.toLowerCase().includes(name.toLowerCase()) 
         })
 
         setDisplayLaunch(newLaunches)
@@ -56,20 +65,26 @@ const Launch = () => {
 
     const selectYearHandle = (e) =>{
         const year = e.target.value
-        filterLuanch({ year, result: selectResult,  name: searchName})
+        filterLuanch({ year, result: selectResult,  name: searchName, rocket: selectRocket})
         setSelectYear(year)
     }
 
-    const setSelectResultHandle = (e) =>{
+    const selectResultHandle = (e) =>{
         const result = e.target.value
-        filterLuanch({ year: selectYear, result,  name: searchName})
+        filterLuanch({ year: selectYear, result,  name: searchName, rocket: selectRocket})
         setSelectResult(result)
     }
 
     const searchNameHandle = (e) =>{
         const name = e.target.value
-        filterLuanch({ year: selectYear, result: selectResult, name})
+        filterLuanch({ year: selectYear, result: selectResult, name, rocket: selectRocket})
         setSearchName(name)
+    }
+
+    const selectRocketHandle = (e) =>{
+        const rocket = e.target.value
+        filterLuanch({ year: selectYear, result: selectResult, name: searchName , rocket})
+        setSelectRocket(rocket)
     }
 
     useEffect(() => {
@@ -96,11 +111,20 @@ const Launch = () => {
                         </select>
                     </div>
                     <div className="select">
-                        <select name="slct" id="slct" onChange={setSelectResultHandle}>
+                        <select name="slct" id="slct" onChange={selectResultHandle}>
                             <option value="0" selected disabled>RESULT</option>
                             <option value="any" >ANY RESULT</option>
                             <option value="success" >SUCCESS</option>
                             <option value="fail" >FAIL</option>
+                        </select>
+                    </div>
+                    <div className="select">
+                        <select name="slct" id="slct" onChange={selectRocketHandle}>
+                            <option value="0" selected disabled>ROCKET</option>
+                            <option value="any" >ANY ROCKET</option>
+                            <option value="Falcon 1" >Falcon 1</option>
+                            <option value="Falcon 9" >Falcon 9</option>
+                            <option value="Falcon Heavy" >Falcon Heavy</option>
                         </select>
                     </div>
                 </div>

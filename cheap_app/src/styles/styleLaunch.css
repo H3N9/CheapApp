@@ -77,7 +77,6 @@
     height: 2em;
     line-height: 2;
     background: #2c3e50;
-    overflow: hidden;
     border: 2px white solid;
     margin-right: 10px;
 }
@@ -126,21 +125,22 @@
         flex-direction: column-reverse;
         justify-items: flex-start;
         align-items: flex-start;
-        margin-left: 15%;
-        width: 85%;
+        margin-left: 10%;
+        width: 90%;
     }
 
     .selectBox{
-        width: 62%;
+        width: 100%;
+        flex-wrap: wrap;
     }
 
     .select{
-        width: 60%;
-        min-width: 120px;
+        width: 20%;
+        margin-bottom: 10px;
     }
 
     .input{
-        width: 60%;
+        width: 80%;
         margin-bottom: 10px;
         min-width: 250px;
     }

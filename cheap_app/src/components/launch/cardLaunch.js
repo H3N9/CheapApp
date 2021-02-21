@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 
 
 const CardLaunch = ({launch, id}) => {
-    const {links, launch_year, mission_name, launch_success } = launch
+    const {links, launch_year, mission_name, launch_success, rocket } = launch
     const resultLaunch = launch_success? "LAUNCH SUCCESS":"LAUNCH FAIL"
     const logo = links.mission_patch_small
     const reusltMission = launch_success? "success":"fail"
@@ -19,6 +19,9 @@ const CardLaunch = ({launch, id}) => {
                 <h1 className="text">{mission_name}</h1>
             </div>
 
+            <div className="titleLuanch boxCenter">
+                <h2 className="text">{rocket.rocket_name}</h2>
+            </div>
             <div className="yearLaunch">
                 <p className="text">{launch_year}</p>
             </div>

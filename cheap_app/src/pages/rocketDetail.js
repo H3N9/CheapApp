@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useLocation, useParams } from 'react-router-dom'
 import { fetchData } from '../tools/fetch'
 import RocketDetailInfo from '../components/rocket/RocketDetailInfo'
+import { useActiveMenu } from './routePath'
 import "../styles/stylesRocketDetailPage.css"
 
 const RocketDetail = () =>{
@@ -9,13 +10,18 @@ const RocketDetail = () =>{
     const { rocketId } = useParams();
     const [rocket, setRocket] = useState(undefined)
     const rocketUrl = `https://api.spacexdata.com/v3/rockets/${rocketId}`
+    const { setRocketMenuActive } = useActiveMenu()
 
     useEffect(() =>{
+        setRocketMenuActive('boxNavActive')
         if (location.state === undefined){
             fetchData(rocketUrl, setRocket)
         }
         else{
             setRocket(location.state.rocket)
+        }
+        return () =>{
+            setRocketMenuActive('boxNav')
         }
     }, [])
 

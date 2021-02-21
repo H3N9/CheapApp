@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState, useContext, createContext } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import NavBar from '../components/navBar'
 import Launch from './launch'
@@ -9,9 +9,13 @@ import '../styles/stylesHome.css'
 import LaunchDetail from './launchDetail'
 
 const screenHeight = window.innerHeight
+const ActiveMenuContext = createContext()
 
 const RoutePath = () => {
     const [stylePacks, setStylePacks] = useState(defaultStlyes)
+    const [homeMenuActive, sethomeMenuActive] = useState('boxNav')
+    const [rocketMenuActive, setRocketMenuActive] = useState('boxNav')
+    const [launchMenuActive, setlaunchMenuActive] = useState('boxNav')
 
     const handleScroll = useCallback(() => {
         const stylesChange = { ...stylePacks }
@@ -35,26 +39,35 @@ const RoutePath = () => {
 
     return (
         <Router>
-            <NavBar addColor={stylePacks.navBar} />
-            <div id="content">
-                <Switch>
-                <Route exact path="/CheapApp">
-                    <Home />
-                </Route>
-                <Route path="/launch">
-                    <Launch />
-                </Route>
-                <Route path="/rockets">
-                    <Rockets />
-                </Route>
-                <Route path="/rocketsDetail/:rocketId">
-                    <RocketDetail/>
-                </Route>
-                <Route path="/launchDetail/:launchId">
-                    <LaunchDetail/>
-                </Route>
-                </Switch>
-            </div>
+            <ActiveMenuContext.Provider value={{ 
+                    homeMenuActive,
+                    sethomeMenuActive,
+                    rocketMenuActive, 
+                    setRocketMenuActive, 
+                    launchMenuActive,
+                    setlaunchMenuActive
+                }}>
+                <NavBar addColor={stylePacks.navBar} />
+                <div id="content">
+                    <Switch>
+                    <Route exact path="/CheapApp">
+                        <Home />
+                    </Route>
+                    <Route path="/launch">
+                        <Launch />
+                    </Route>
+                    <Route path="/rockets">
+                        <Rockets />
+                    </Route>
+                    <Route path="/rocketsDetail/:rocketId">
+                        <RocketDetail/>
+                    </Route>
+                    <Route path="/launchDetail/:launchId">
+                        <LaunchDetail/>
+                    </Route>
+                    </Switch>
+                </div>
+            </ActiveMenuContext.Provider>
         </Router>
     )
 }
@@ -71,3 +84,5 @@ const scrollStyles = {
 }
 
 export default RoutePath
+
+export const useActiveMenu = () => useContext(ActiveMenuContext)

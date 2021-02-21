@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import '../styles/styleLaunch.css'
 import {fetchData} from '../tools/fetch'
 import CardLaunch from '../components/launch/cardLaunch'
+import { useActiveMenu } from './routePath'
 
 const Launch = () => {
     const [launchData, setLaunchData] = useState([])
@@ -11,6 +12,7 @@ const Launch = () => {
     const [selectResult, setSelectResult] = useState('any')
     const [searchName, setSearchName] = useState('')
     const urlLuanch = "https://api.spacexdata.com/v3/launches"
+    const {setlaunchMenuActive} = useActiveMenu()
 
     const setLaunchDataPage = (launches) =>{
         setLaunchData(launches)
@@ -71,7 +73,11 @@ const Launch = () => {
     }
 
     useEffect(() => {
+        setlaunchMenuActive('boxNavActive')
         fetchData(urlLuanch, setLaunchDataPage)
+        return () =>{
+            setlaunchMenuActive('boxNav')
+        }
     }, [])
 
     return (

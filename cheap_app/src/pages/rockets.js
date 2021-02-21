@@ -1,13 +1,20 @@
 import React, { useEffect, useState } from 'react'
+import { useLocation } from 'react-router-dom'
 import { fetchData } from '../tools/fetch'
 import RocketBox from '../components/rocket/rocketBox'
+import { useActiveMenu } from './routePath'
 import '../styles/stylesRocketPage.css'
 
 const Rockets = () => {
     const [rockets, setRockets] = useState([])
+    const {setRocketMenuActive} = useActiveMenu()
 
     useEffect(() =>{
+        setRocketMenuActive('boxNavActive')
         fetchData('https://api.spacexdata.com/v3/rockets', setRockets)
+        return () =>{
+            setRocketMenuActive('boxNav')
+        }
     }, [])
 
     return(

@@ -27,38 +27,32 @@ const Launch = () => {
         let newLaunches = launchData.slice()
         
         /* filter and reverse year */
-        if (year === "any"){}
-        else if (year === "reverse"){
-            newLaunches.reverse()
-        }
+        if (year === "any" && result === "any" && name === "" && rocket === "any"){}
         else{
             newLaunches = newLaunches.filter((launch) =>{
-                return (launch.launch_year === year)
-            })
-        }
-
-        /* filter result launch_success */
-        if (result !== "any"){
-            newLaunches = newLaunches.filter((launch) =>{
+                let containCount = 0
                 const isResult = (result === "success")?true:false
-                if (launch.launch_success === null && !isResult){
-                    return true
+    
+                if (year === "any" || launch.launch_year === year){
+                    containCount++
                 }
-                return launch.launch_success === isResult
+                if (result === "any" || launch.launch_success === isResult || (launch.launch_success === null && !isResult)){
+                    containCount++
+                }
+                if (rocket === "any" || launch.rocket.rocket_name === rocket){
+                    containCount++
+                }
+                if (launch.mission_name.toLowerCase().includes(name.toLowerCase())){
+                    containCount++
+                }
+    
+                return (containCount === 4)
             })
         }
 
-        if (rocket !== "any"){
-            newLaunches = newLaunches.filter((launch) =>{
-                const rocketName = launch.rocket.rocket_name
-                return  rocketName === rocket
-            })
+        if (year === "reverse"){
+            newLaunches.reverse()
         }
-        /* filter mission_name launch */
-        newLaunches = newLaunches.filter((launch) =>{
-            const rocketId = launch.rocket.rocket_id
-            return launch.mission_name.toLowerCase().includes(name.toLowerCase()) 
-        })
 
         setDisplayLaunch(newLaunches)
     }

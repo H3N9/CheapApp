@@ -36,6 +36,10 @@
     text-decoration: underline;
 }
 
+.boxNav > p, .boxNavActive > p{
+    font-family: 'Viga', sans-serif;
+}
+
 .boxRocketLink{
     width: 30vw;
     height: 100%;

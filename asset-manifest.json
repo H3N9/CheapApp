@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/CheapApp/static/css/main.4dd11216.chunk.css",
-    "main.js": "/CheapApp/static/js/main.c104cb7c.chunk.js",
-    "main.js.map": "/CheapApp/static/js/main.c104cb7c.chunk.js.map",
+    "main.js": "/CheapApp/static/js/main.e578d740.chunk.js",
+    "main.js.map": "/CheapApp/static/js/main.e578d740.chunk.js.map",
     "runtime-main.js": "/CheapApp/static/js/runtime-main.3c4f4d04.js",
     "runtime-main.js.map": "/CheapApp/static/js/runtime-main.3c4f4d04.js.map",
     "static/js/2.00555b43.chunk.js": "/CheapApp/static/js/2.00555b43.chunk.js",
@@ -23,6 +23,6 @@
     "static/js/runtime-main.3c4f4d04.js",
     "static/js/2.00555b43.chunk.js",
     "static/css/main.4dd11216.chunk.css",
-    "static/js/main.c104cb7c.chunk.js"
+    "static/js/main.e578d740.chunk.js"
   ]
 }

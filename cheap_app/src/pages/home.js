@@ -3,6 +3,7 @@ import '../styles/stylesHome.css'
 import { fetchData } from '../tools/fetch'
 import CardHis from '../components/home/cardHis'
 import Logo from '../images/home/logo.png'
+import { useActiveMenu } from './routePath'
 
 const Home = () => {
     const [jsonInfo, setJsonInfo] = useState({})
@@ -10,10 +11,15 @@ const Home = () => {
     const [viewScroll, setViewScroll] = useState(1)
     const urlInfo = 'https://api.spacexdata.com/v3/info'
     const urlHis = 'https://api.spacexdata.com/v3/history'
+    const { sethomeMenuActive } = useActiveMenu()
 
     useEffect(() => {
+        sethomeMenuActive('boxNavActive')
         fetchData(urlInfo, setJsonInfo)
         fetchData(urlHis, setJsonHis)
+        return () => {
+            sethomeMenuActive('boxNav')
+        }
     }, [])
 
     const scrollHandle = (event) => {

@@ -11,7 +11,7 @@ const BoxNav = ({ text, path, menuActive }) => {
                 pathname: path,
             }}
         >
-            {path !== '/CheapApp' ? (
+            {text !== 'image' ? (
                 <p>{text}</p>
             ) : (
                 <img className="logo" src={Logo} alt="Logo_SpaceX" alt="logo" />

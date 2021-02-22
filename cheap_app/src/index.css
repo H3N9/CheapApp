@@ -18,10 +18,10 @@ code {
     height: 100%;
     width: 100%;
 }
-::-webkit-scrollbar{
+::-webkit-scrollbar {
     width: 0.3vw;
 }
 ::-webkit-scrollbar-thumb {
     background: white;
     border-radius: 0.1vw;
-  }
+}

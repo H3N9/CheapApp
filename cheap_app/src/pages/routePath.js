@@ -1,4 +1,10 @@
-import React, { useCallback, useEffect, useState, useContext, createContext } from 'react'
+import React, {
+    useCallback,
+    useEffect,
+    useState,
+    useContext,
+    createContext,
+} from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import NavBar from '../components/navBar'
 import Launch from './launch'
@@ -39,32 +45,34 @@ const RoutePath = () => {
 
     return (
         <Router>
-            <ActiveMenuContext.Provider value={{ 
+            <ActiveMenuContext.Provider
+                value={{
                     homeMenuActive,
                     sethomeMenuActive,
-                    rocketMenuActive, 
-                    setRocketMenuActive, 
+                    rocketMenuActive,
+                    setRocketMenuActive,
                     launchMenuActive,
-                    setlaunchMenuActive
-                }}>
+                    setlaunchMenuActive,
+                }}
+            >
                 <NavBar addColor={stylePacks.navBar} />
                 <div id="content">
                     <Switch>
-                    <Route exact path="/CheapApp">
-                        <Home />
-                    </Route>
-                    <Route path="/launch">
-                        <Launch />
-                    </Route>
-                    <Route path="/rockets">
-                        <Rockets />
-                    </Route>
-                    <Route path="/rocketsDetail/:rocketId">
-                        <RocketDetail/>
-                    </Route>
-                    <Route path="/launchDetail/:launchId">
-                        <LaunchDetail/>
-                    </Route>
+                        <Route exact path="/CheapApp">
+                            <Home />
+                        </Route>
+                        <Route path="/launch">
+                            <Launch />
+                        </Route>
+                        <Route path="/rockets">
+                            <Rockets />
+                        </Route>
+                        <Route path="/rocketsDetail/:rocketId">
+                            <RocketDetail />
+                        </Route>
+                        <Route path="/launchDetail/:launchId">
+                            <LaunchDetail />
+                        </Route>
                     </Switch>
                 </div>
             </ActiveMenuContext.Provider>

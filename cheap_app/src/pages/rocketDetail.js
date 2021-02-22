@@ -3,24 +3,23 @@ import { useLocation, useParams } from 'react-router-dom'
 import { fetchData } from '../tools/fetch'
 import RocketDetailInfo from '../components/rocket/RocketDetailInfo'
 import { useActiveMenu } from './routePath'
-import "../styles/stylesRocketDetailPage.css"
+import '../styles/stylesRocketDetailPage.css'
 
-const RocketDetail = () =>{
+const RocketDetail = () => {
     const location = useLocation()
-    const { rocketId } = useParams();
+    const { rocketId } = useParams()
     const [rocket, setRocket] = useState(undefined)
     const rocketUrl = `https://api.spacexdata.com/v3/rockets/${rocketId}`
     const { setRocketMenuActive } = useActiveMenu()
 
-    useEffect(() =>{
+    useEffect(() => {
         setRocketMenuActive('boxNavActive')
-        if (location.state === undefined){
+        if (location.state === undefined) {
             fetchData(rocketUrl, setRocket)
-        }
-        else{
+        } else {
             setRocket(location.state.rocket)
         }
-        return () =>{
+        return () => {
             setRocketMenuActive('boxNav')
         }
     }, [])
@@ -29,9 +28,7 @@ const RocketDetail = () =>{
         <div className="rocketBackground">
             <div className="navDummy"></div>
             <div className="gradient">
-                {rocket !== undefined &&
-                    <RocketDetailInfo rocket={rocket}/>
-                }
+                {rocket !== undefined && <RocketDetailInfo rocket={rocket} />}
             </div>
         </div>
     )

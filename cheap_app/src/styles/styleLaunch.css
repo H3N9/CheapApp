@@ -1,7 +1,7 @@
-#launch-i{
+#launch-i {
     width: 100%;
     height: 100vh;
-    background-image: url("../images/launch/bg.jpg");
+    background-image: url('../images/launch/bg.jpg');
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -9,7 +9,7 @@
     color: white;
     font-size: 5vw;
 }
-#searchBar{
+#searchBar {
     background-color: black;
     display: flex;
     flex-direction: row;
@@ -19,29 +19,28 @@
     justify-content: center;
 }
 
-#launchDetails{
+#launchDetails {
     width: 100%;
     height: 70vh;
     background-color: black;
     display: flex;
     justify-content: center;
 }
-#boxDetail{
+#boxDetail {
     width: 90%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     overflow-y: scroll;
     height: 100%;
-
 }
-#endling{
+#endling {
     width: 100%;
     height: 5vh;
     background-color: black;
 }
 
-.selectBox{
+.selectBox {
     display: flex;
     flex-direction: row;
 }
@@ -56,14 +55,14 @@
     background: #000;
     background-image: none;
     flex: 1;
-    padding: 0 .5em;
+    padding: 0 0.5em;
     color: #fff;
     cursor: pointer;
     border: 0;
     font-size: 1em;
 }
 
-  /* Remove IE arrow */
+/* Remove IE arrow */
 #slct::-ms-expand {
     display: none;
     border: 1px white solid;
@@ -92,22 +91,22 @@
     color: #fff;
     cursor: pointer;
     pointer-events: none;
-    -webkit-transition: .25s all ease;
-    -o-transition: .25s all ease;
-    transition: .25s all ease;
+    -webkit-transition: 0.25s all ease;
+    -o-transition: 0.25s all ease;
+    transition: 0.25s all ease;
 }
-    /* Transition */
+/* Transition */
 .select:hover::after {
     color: #f39c12;
 }
 
-.input{
+.input {
     border: 3px white solid;
     min-width: 300px;
     padding-right: 10px;
 }
 
-.input > input{
+.input > input {
     width: 100%;
     min-width: 300px;
     height: 2em;
@@ -121,7 +120,7 @@
 }
 
 @media (max-width: 800px) {
-    #searchBar{
+    #searchBar {
         flex-direction: column-reverse;
         justify-items: flex-start;
         align-items: flex-start;
@@ -129,30 +128,30 @@
         width: 90%;
     }
 
-    .selectBox{
+    .selectBox {
         width: 100%;
         flex-wrap: wrap;
     }
 
-    .select{
+    .select {
         width: 20%;
         margin-bottom: 10px;
     }
 
-    .input{
+    .input {
         width: 80%;
         margin-bottom: 10px;
         min-width: 250px;
     }
-    .input > input{
+    .input > input {
         width: 100%;
         min-width: 0px;
     }
 }
 
-@media (max-width: 530px){
-    #slct, .input > input{
+@media (max-width: 530px) {
+    #slct,
+    .input > input {
         font-size: 0.8em;
     }
 }
-

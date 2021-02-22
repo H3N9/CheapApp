@@ -1,4 +1,4 @@
-#detail-b{
+#detail-b {
     background-image: url('../images//launch/bg2.jpg');
     background-size: cover;
     width: 100%;
@@ -6,31 +6,28 @@
     position: fixed;
     z-index: -1;
 }
-.space-b{
+.space-b {
     width: 100%;
     height: 20vh;
 }
-#boxDetail-1{
+#boxDetail-1 {
     width: 98%;
     display: flex;
     flex-wrap: wrap;
     margin-left: 2%;
-    
 }
-@media screen and (max-width: 900px){
-    #boxDetail-1{
+@media screen and (max-width: 900px) {
+    #boxDetail-1 {
         justify-content: center;
     }
-    
 }
-#date{
+#date {
     text-align: center;
     color: white;
     display: flex;
     flex-direction: column;
-
 }
-#buttonRocket{
+#buttonRocket {
     text-decoration: none;
     width: 70%;
     height: 100%;
@@ -42,7 +39,7 @@
     font-size: 2vmin;
     transition: 0.5s;
 }
-#buttonRocket:hover{
+#buttonRocket:hover {
     color: black;
     background-color: white;
 }
@@ -50,52 +47,51 @@
     margin: 0;
     font-size: 4vmin;
 }
-#im-detail{
+#im-detail {
     width: 650px;
     display: flex;
     flex-direction: column;
 }
-.boxTextDetail{
+.boxTextDetail {
     display: flex;
     width: 100%;
     color: white;
     margin-bottom: 1%;
 }
-.rightText{
+.rightText {
     display: flex;
     padding-right: 2%;
     width: 45%;
     margin-left: 5%;
     justify-content: flex-start;
 }
-.leftText{
+.leftText {
     padding-left: 2%;
     display: flex;
     justify-content: flex-end;
     width: 45%;
     margin-right: 5%;
 }
-#logoImage{
+#logoImage {
     width: 150px;
 }
-#logoImage > img{
+#logoImage > img {
     width: 100%;
     height: auto;
 }
-.detailText{
+.detailText {
     margin: 0;
     font-size: 3vmin;
 }
-.title{
+.title {
     font-size: 5vmin;
 }
-#detailLaunch{
+#detailLaunch {
     width: 98%;
     color: white;
     margin-left: 2%;
-
 }
-#longReason{
+#longReason {
     font-size: 2vmin;
     padding: 0.5% 0;
 }
@@ -103,7 +99,7 @@
     margin: 0;
     font-size: 4vmin;
 }
-.textDetail{
+.textDetail {
     display: flex;
     width: 100%;
     font-size: 2.5vmin;
@@ -112,7 +108,7 @@
     margin: 0.5% 0;
     width: 200px;
 }
-#underlineDetail{
+#underlineDetail {
     width: 70vmin;
     height: 0.3vh;
     background-color: white;
@@ -122,7 +118,7 @@
     display: flex;
     flex-direction: column;
 } */
-#showcase{
+#showcase {
     display: flex;
     min-height: 500px;
     flex-wrap: wrap;
@@ -130,35 +126,35 @@
     width: 100%;
     justify-content: center;
 }
-#video{
+#video {
     display: flex;
     flex-direction: column;
     width: 900px;
 }
-#gallaryShowcase{
+#gallaryShowcase {
     width: 900px;
 }
 
-.gallary{
+.gallary {
     display: flex;
     flex-wrap: wrap;
-    justify-content:space-around;
+    justify-content: space-around;
     width: 100%;
 }
-.imageShowcase{
+.imageShowcase {
     width: 400px;
     margin-bottom: 1%;
 }
-#titleShowcase{
+#titleShowcase {
     width: 100%;
     display: flex;
 }
-#videoShowcase{
+#videoShowcase {
     width: 90%;
     min-height: 400px;
     align-self: center;
 }
-.titleShowcase-t{
+.titleShowcase-t {
     color: white;
     height: 5vh;
     font-size: 4vmin;

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { useLocation } from 'react-router-dom'
 import { fetchData } from '../tools/fetch'
 import RocketBox from '../components/rocket/rocketBox'
 import { useActiveMenu } from './routePath'
@@ -7,27 +6,27 @@ import '../styles/stylesRocketPage.css'
 
 const Rockets = () => {
     const [rockets, setRockets] = useState([])
-    const {setRocketMenuActive} = useActiveMenu()
+    const { setRocketMenuActive } = useActiveMenu()
 
-    useEffect(() =>{
+    useEffect(() => {
         setRocketMenuActive('boxNavActive')
         fetchData('https://api.spacexdata.com/v3/rockets', setRockets)
-        return () =>{
+        return () => {
             setRocketMenuActive('boxNav')
         }
     }, [])
 
-    return(
+    return (
         <React.Fragment>
             <div id="rocket-i">
-                <div><h1>ROCKET</h1></div>
+                <div>
+                    <h1>ROCKET</h1>
+                </div>
                 <div className="gradientColor"></div>
             </div>
             <div className="container">
-                {rockets.map((rocket) =>{
-                    return(
-                        <RocketBox key={rocket.rocket_id} rocket={rocket}/>
-                    )
+                {rockets.map((rocket) => {
+                    return <RocketBox key={rocket.rocket_id} rocket={rocket} />
                 })}
             </div>
         </React.Fragment>

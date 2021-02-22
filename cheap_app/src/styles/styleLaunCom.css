@@ -1,4 +1,4 @@
-.cardLaunch{
+.cardLaunch {
     background-color: rgb(40, 40, 40);
     display: flex;
     flex-direction: column;
@@ -10,37 +10,37 @@
     text-decoration: none;
     transition: 0.5s;
 }
-.cardLaunch:hover{
+.cardLaunch:hover {
     background-color: rgb(80, 80, 80);
 }
 
-.image-launch{
+.image-launch {
     object-fit: cover;
     max-width: 100%;
 }
-.boxCenter{
+.boxCenter {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.titleLuanch{
+.titleLuanch {
     width: 100%;
     height: 15%;
     background-color: transparent;
     color: white;
     font-size: 1.2rem;
 }
-.text{
+.text {
     margin: 10px 0;
 }
-.yearLaunch{
+.yearLaunch {
     width: 100%;
     height: 10%;
     background-color: transparent;
     color: white;
     font-size: 1.2rem;
 }
-.resultLaunch{
+.resultLaunch {
     width: 100%;
     height: 10%;
     background-color: transparent;
@@ -49,6 +49,6 @@
 .fail {
     color: rgb(199, 65, 65);
 }
-.success{
-    color:rgb(3, 129, 20)
+.success {
+    color: rgb(3, 129, 20);
 }

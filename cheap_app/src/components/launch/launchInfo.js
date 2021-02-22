@@ -1,14 +1,23 @@
 import React from 'react'
 import BoxTextDetail from './boxTextDetail'
 
-const LaunchInfo = ({launch}) => {
-    const {launch_date_utc, mission_name, rocket, launch_site, launch_failure_details, details, launch_success, links } = launch
-    const {rocket_name, rocket_id, rocket_type, second_stage} = rocket
-    const {payloads} = second_stage
-    const {payload_id, payload_type} = payloads[0]
+const LaunchInfo = ({ launch }) => {
+    const {
+        launch_date_utc,
+        mission_name,
+        rocket,
+        launch_site,
+        launch_failure_details,
+        details,
+        launch_success,
+        links,
+    } = launch
+    const { rocket_name, rocket_id, rocket_type, second_stage } = rocket
+    const { payloads } = second_stage
+    const { payload_id, payload_type } = payloads[0]
     const { time, reason } = launch_failure_details || {}
-    const {mission_patch_small} = links
-    const {site_name} = launch_site
+    const { mission_patch_small } = links
+    const { site_name } = launch_site
     const dateTime = new Date(launch_date_utc)
     const months = [
         'JAN',
@@ -28,18 +37,33 @@ const LaunchInfo = ({launch}) => {
     const month = months[dateTime.getMonth()]
     const year = dateTime.getFullYear()
 
-
     const detailOfLaunch = (sucess) => {
-        if(sucess) {
+        if (sucess) {
             return (
-                <BoxTextDetail success={sucess} leftText={"LAUNCH SUCCESS"} rightText={""} title={false} button={false} />
+                <BoxTextDetail
+                    success={sucess}
+                    leftText={'LAUNCH SUCCESS'}
+                    rightText={''}
+                    title={false}
+                    button={false}
+                />
             )
-        }
-        else {
+        } else {
             return (
                 <>
-                <BoxTextDetail success={sucess} leftText={"LAUNCH FAIL"} rightText={`${time} Times`} title={false} />
-                <BoxTextDetail success={sucess} leftText={""} rightText={reason} title={false} button={false} />
+                    <BoxTextDetail
+                        success={sucess}
+                        leftText={'LAUNCH FAIL'}
+                        rightText={`${time} Times`}
+                        title={false}
+                    />
+                    <BoxTextDetail
+                        success={sucess}
+                        leftText={''}
+                        rightText={reason}
+                        title={false}
+                        button={false}
+                    />
                 </>
             )
         }
@@ -57,12 +81,27 @@ const LaunchInfo = ({launch}) => {
                 </div>
 
                 <div id="im-detail">
-                    <BoxTextDetail leftText={"MISSION"} rightText={mission_name} title={true} button={false} />
-                    <BoxTextDetail leftText={rocket_name} rightText={"ROCKET DETAIL"} title={false} button={true} id={rocket_id} />
-                    <BoxTextDetail leftText={"TYPE"} rightText={rocket_type} title={false} button={false} />
-                    {detailOfLaunch(launch_success)}  
+                    <BoxTextDetail
+                        leftText={'MISSION'}
+                        rightText={mission_name}
+                        title={true}
+                        button={false}
+                    />
+                    <BoxTextDetail
+                        leftText={rocket_name}
+                        rightText={'ROCKET DETAIL'}
+                        title={false}
+                        button={true}
+                        id={rocket_id}
+                    />
+                    <BoxTextDetail
+                        leftText={'TYPE'}
+                        rightText={rocket_type}
+                        title={false}
+                        button={false}
+                    />
+                    {detailOfLaunch(launch_success)}
                 </div>
-
 
                 <div id="logoImage">
                     <img src={mission_patch_small} alt="Logo" />
@@ -71,7 +110,7 @@ const LaunchInfo = ({launch}) => {
 
             <div className="space-b" />
 
-            <div id="detailLaunch" >
+            <div id="detailLaunch">
                 <h1>Detail</h1>
 
                 <div className="textDetail">
@@ -89,39 +128,41 @@ const LaunchInfo = ({launch}) => {
                     <h3>{site_name}</h3>
                 </div>
 
-                <div id="underlineDetail"/>
+                <div id="underlineDetail" />
 
-                <div id="longReason">
-                    {details}
-                </div>
-
+                <div id="longReason">{details}</div>
             </div>
 
             <div className="space-b" />
 
-
             <div id="showcase">
-                    {links.youtube_id && <div id="video">
-                        <h1 className="titleShowcase-t" >Video</h1>
-                        <iframe id="videoShowcase" src={`https://www.youtube.com/embed/${links.youtube_id}/`}  allowFullScreen />
-                    </div>}
-                    {
-                        links.flickr_images.length === 0 ? null 
-                        :
-                        
-                        <div id="gallaryShowcase">
-                            <h1 className="titleShowcase-t">Gallary</h1>
-                            <div className="gallary">
+                {links.youtube_id && (
+                    <div id="video">
+                        <h1 className="titleShowcase-t">Video</h1>
+                        <iframe
+                            id="videoShowcase"
+                            src={`https://www.youtube.com/embed/${links.youtube_id}/`}
+                            allowFullScreen
+                        />
+                    </div>
+                )}
+                {links.flickr_images.length === 0 ? null : (
+                    <div id="gallaryShowcase">
+                        <h1 className="titleShowcase-t">Gallary</h1>
+                        <div className="gallary">
                             {links.flickr_images.map((link) => {
-                            return (
-                                <img src={link} class="imageShowcase" alt={link} />
-                            )
+                                return (
+                                    <img
+                                        src={link}
+                                        class="imageShowcase"
+                                        alt={link}
+                                    />
+                                )
                             })}
-                            </div>
                         </div>
-                    }
-                   
-                </div>   
+                    </div>
+                )}
+            </div>
         </>
     )
 }

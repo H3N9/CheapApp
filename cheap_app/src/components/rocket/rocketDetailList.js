@@ -1,6 +1,6 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 
-const RocketDetailList = ({ title, data }) =>{
+const RocketDetailList = ({ title, data }) => {
     const listKey = Object.keys(data)
 
     return (
@@ -9,10 +9,12 @@ const RocketDetailList = ({ title, data }) =>{
                 <h3>{title}</h3>
             </div>
             <div className="detailListInfo">
-                {listKey.map((item) =>{
-                    return(
+                {listKey.map((item) => {
+                    return (
                         <div>
-                            <p><b>{item}</b></p>
+                            <p>
+                                <b>{item}</b>
+                            </p>
                             <p>{data[item]}</p>
                         </div>
                     )

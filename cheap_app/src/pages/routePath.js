@@ -82,13 +82,9 @@ const RoutePath = () => {
 
 const defaultStlyes = {
     navBar: 'navBar',
-    histories: 'name-i-b',
-    detail: 'name-i-b',
 }
 const scrollStyles = {
     navBar: 'navBar addColor',
-    histories: 'name-i-b leftStyle',
-    detail: 'name-i-b rightStyle',
 }
 
 export default RoutePath
